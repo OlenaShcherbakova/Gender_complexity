@@ -13,15 +13,7 @@ trees <- load_trees(PHYLOGENIES[5])
 tree <- sample(trees, 1)[[1]]
 
 taxa <- read.csv(TAXAS[5])
-gb <- load_data_final_short()
-
-gb$sem_classes <- as.numeric(as.character(gb$sem_classes))
-gb$agr_patterns <- as.numeric(as.character(gb$agr_patterns))
-
-gb <- gb %>%
-  filter(sem_classes > 0 | agr_patterns > 0) %>%
-  mutate(sem_classes_10 = sem_classes * 10,
-         agr_patterns_10 = agr_patterns * 10)
+gb <- load_data_intro_figure()
 
 
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
@@ -57,15 +49,13 @@ world <- map_data('world', wrap=c(-25,335), ylim=c(-56,80), margin=T)
 
 lakes <- map_data("lakes", wrap=c(-25,335), col="white", border="gray", ylim=c(-55,65), margin=T)
 
-#gb.subset$sem_classes <- as.factor(gb.subset$sem_classes)
-#gb.subset$agr_patterns <- as.factor(gb.subset$agr_patterns)
-
-gb.subset$sem_classes <- as.numeric(as.character(gb.subset$sem_classes))
-gb.subset$agr_patterns <- as.numeric(as.character(gb.subset$agr_patterns))
-
 #shifting the longlat of the dataframe to match the pacific centered map
 combination <- gb.subset %>%
-  mutate(Longitude = if_else(Longitude <= -25, Longitude + 360, Longitude))
+  mutate(Longitude = if_else(Longitude <= -25, Longitude + 360, Longitude)) %>%
+  mutate(Gender = 
+         recode(Gender,
+                "0" = "absent", #first OLD then NEW
+                "1" = "present")) 
 
 
 #Basemap
@@ -92,22 +82,11 @@ basemap <- ggplot(combination) +
 custom_cols = viridis::viridis(40); custom_cols <- custom_cols[c(40:1)]
 
 m1 <- basemap + geom_point(
-  aes(x=Longitude, y=Latitude, color=sem_classes), alpha=0.5,
+  aes(x=Longitude, y=Latitude, color=Gender), alpha=0.5,
   stat = "identity", size=1.8
 ) 
-m1 <- m1 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Semantic\nrules") + theme(text = element_text(size=18), legend.key.size = unit(1, 'cm')) #legend.title = element_text(size=12)
+m1 <- m1 + scale_color_manual(values = c("gray50", "red")) + 
+  labs(color = "Gender/noun class") + theme(text = element_text(size=18), legend.key.size = unit(1, 'cm'))
+m1
 
-#ggsave(file="output/plot_map1_sem_rules.svg", plot=m1, width=10, height=5)
-
-
-m2 <- basemap + geom_point(
-  aes(x=Longitude, y=Latitude, color=agr_patterns), alpha=0.5,
-  stat = "identity", size=1.8
-) 
-m2 <- m2 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Agreement\npatterns") + theme(text = element_text(size=18), legend.key.size = unit(1, 'cm'))
-
-#ggsave(file="output/plot_map2_agr_patterns.svg", plot=m2, width=10, height=5)
-
-joined <- m1/m2
-
-ggsave(file="output/plot_maps_features.svg", plot=joined, width=10, height=10)
+ggsave(file="output/plot_map_intro.svg", plot=m1, width=10, height=5)

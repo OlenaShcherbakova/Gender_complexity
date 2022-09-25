@@ -97,47 +97,20 @@ load_trees <- function(dirname, type='posterior', mappingfile='taxa.csv', rename
 
 
 
-load_data_final <- function(filename="data/GB_wide_strict.tsv") {
+load_data_intro_figure <- function(filename="data/GB_wide_strict.tsv") {
   grambank <- read.csv(filename, header = TRUE, sep = '\t', stringsAsFactors=FALSE)
   colnames(grambank)[colnames(grambank)=="Language_ID"] <- "Glottocode"
   #grambank[is.na(grambank)] <- "-"
-  grambank_compl <- subset(x = grambank, select = c("Glottocode", "GB030", "GB051", "GB052", "GB053", "GB054", "GB170", "GB171", "GB172", "GB192", "GB198", "GB321"))
+  grambank_compl <- subset(x = grambank, select = c("Glottocode", "GB030", "GB051", "GB052", "GB053", "GB054", "GB170", "GB171", "GB172", "GB177", "GB192", "GB198", "GB314", "GB315", "GB321"))
   grambank_compl <- na.omit(grambank_compl)
   
-  
   for(i in 1:nrow(grambank_compl)){
-    summ <- sum(c(as.numeric(grambank_compl$GB051[i]), as.numeric(grambank_compl$GB052[i]), as.numeric(grambank_compl$GB053[i]), as.numeric(grambank_compl$GB054[i])), na.rm = T)
-    if(summ > 0 ){grambank_compl$sem_classes[i] <- summ/4}
-    else(grambank_compl$sem_classes[i] <- 0)
+    summ <- sum(c(as.numeric(grambank_compl$GB030[i]), as.numeric(grambank_compl$GB051[i]), as.numeric(grambank_compl$GB052[i]), as.numeric(grambank_compl$GB053[i]), as.numeric(grambank_compl$GB054[i]), grambank_compl$GB170[i]), as.numeric(grambank_compl$GB172[i]), as.numeric(grambank_compl$GB177[i]), as.numeric(grambank_compl$GB192[i]), as.numeric(grambank_compl$GB198[i]), as.numeric(grambank_compl$GB314[i]), as.numeric(grambank_compl$GB315[i]), as.numeric(grambank_compl$GB321[i]), na.rm = T)
+    if(summ > 0 ){grambank_compl$Gender[i] <- 1}
+    else(grambank_compl$Gender[i] <- 0)
   }
   
-  
-  for(i in 1:nrow(grambank_compl)){
-    summ <- sum(c(as.numeric(grambank_compl$GB030[i]), as.numeric(grambank_compl$GB170[i]), as.numeric(grambank_compl$GB171[i]), as.numeric(grambank_compl$GB172[i]), as.numeric(grambank_compl$GB198[i])), na.rm = T)
-    if(summ > 0 ){grambank_compl$agr_patterns[i] <- summ/5}
-    else(grambank_compl$agr_patterns[i] <- 0)
-  }
-  
-  
-  for (i in 1:nrow(grambank_compl)) {
-    if (grambank_compl$GB192[i] == "1") {
-      grambank_compl$phon_prop[i] <- "1"
-    } 
-    else {
-      grambank_compl$phon_prop[i] <- "0"
-    }
-  }
-  
-  for (i in 1:nrow(grambank_compl)) {
-    if (grambank_compl$GB321[i] == "1") {
-      grambank_compl$unpredictable[i] <- "1"
-    } 
-    else {
-      grambank_compl$unpredictable[i] <- "0"
-    }
-  }
-  
-  grambank_compl <- subset(x = grambank_compl, select = c("Glottocode", "sem_classes", "agr_patterns", "phon_prop", "unpredictable"))
+  grambank_compl <- subset(x = grambank_compl, select = c("Glottocode", "Gender"))
   
   # make sure we have factors here.
   for (col in colnames(grambank_compl)) {
