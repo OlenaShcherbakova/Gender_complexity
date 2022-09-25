@@ -59,7 +59,6 @@ TAXAS <- list.files(here('data/phylogenies'), pattern="taxa.csv", full.names = T
 
 #Indo-European (Bouckaert et al. 2012)
 basedir <- basename(PHYLOGENIES[1])
-basedir <- paste0(basedir, "_reduced", paste="")
 dir.create(basedir)
 
 # 2. load the trees
