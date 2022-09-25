@@ -97,7 +97,7 @@ load_trees <- function(dirname, type='posterior', mappingfile='taxa.csv', rename
 
 
 
-load_data_intro_figure <- function(filename="data/GB_wide_strict.tsv") {
+load_data_intro_figure <- function(filename="data/GB_input.tsv") {
   grambank <- read.csv(filename, header = TRUE, sep = '\t', stringsAsFactors=FALSE)
   colnames(grambank)[colnames(grambank)=="Language_ID"] <- "Glottocode"
   #grambank[is.na(grambank)] <- "-"
@@ -121,7 +121,7 @@ load_data_intro_figure <- function(filename="data/GB_wide_strict.tsv") {
 }
 
 
-load_data_final_short <- function(filename="data/GB_wide_strict.tsv") {
+load_data_final_short <- function(filename="data/GB_input.tsv") {
   grambank <- read.csv(filename, header = TRUE, sep = '\t', stringsAsFactors=FALSE)
   colnames(grambank)[colnames(grambank)=="Language_ID"] <- "Glottocode"
   #grambank[is.na(grambank)] <- "-"
@@ -153,3 +153,6 @@ load_data_final_short <- function(filename="data/GB_wide_strict.tsv") {
   grambank_compl
 }
 
+OUTPUTDIR_output<- here("output")		
+# create output dir if it does not exist.		
+if (!dir.exists(OUTPUTDIR_output)) { dir.create(OUTPUTDIR_output) }
