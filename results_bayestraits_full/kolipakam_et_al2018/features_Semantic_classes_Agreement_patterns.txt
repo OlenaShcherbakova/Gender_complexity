@@ -1,0 +1,14 @@
+Tamil	2.5	2
+Malayalam	5	2
+Kannada	5	2
+Kodava	0	2
+Malto	5	2
+Tulu	5	2
+Kota	5	4
+Brahui	0	0
+Toda	0	0
+Koya	2.5	4
+Badga	2.5	0
+Parji	2.5	4
+Kuwi	2.5	2
+Kolami	2.5	6
