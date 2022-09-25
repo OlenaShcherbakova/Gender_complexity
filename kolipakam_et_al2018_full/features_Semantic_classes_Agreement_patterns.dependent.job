@@ -1,0 +1,8 @@
+#!/bin/sh
+#SBATCH --job-name bayestraits
+#SBATCH --get-user-env
+#SBATCH --output run.%j.log
+#SBATCH --mem 4G
+#SBATCH --cpus-per-task 1
+BayesTraitsV4 posterior.trees features_Semantic_classes_Agreement_patterns.txt < features_Semantic_classes_Agreement_patterns.dependent.cmd
+
