@@ -78,16 +78,16 @@ tree_Agr_rules <- full_join(tree, d_Agr_rules, by = 'node')
 plot <- ggtree(tree_Sem_classes, aes(color=trait)) + geom_tiplab() +
   scale_color_viridis_c(option="D", name="semantic\nrules", direction=-1, breaks=c(0, 0.25, 0.5, 0.75, 1), limits=c(0, 1)) +
   theme(legend.position="bottom", legend.direction="horizontal") + 
-  theme(text = element_text(size=18), legend.key.size = unit(1, 'cm')) + xlim(0, 8)
-
-ggsave(file="output/plot_IE_tree.svg", plot=plot, width=15, height=12)
+  theme(text = element_text(size=18), legend.key.size = unit(1, 'cm')) #+ xlim(-1, 1)
 
 plot_mirror <- ggtree(tree_Agr_rules, aes(color=trait)) + geom_tiplab(hjust=1) +
   scale_color_viridis_c(option="D", name="agreement\npatterns", direction=-1, breaks=c(0, 0.20, 0.40, 0.60, 0.80, 1), limits=c(0, 1)) + scale_x_reverse() +
   theme(legend.position="bottom", legend.direction="horizontal") + 
   theme(text = element_text(size=18), legend.key.size = unit(1, 'cm'))
 
-plot | plot_mirror
+joined_trees <- plot | plot_mirror
+
+ggsave(file="output/plot_IE_tree.svg", plot=plot, width=15, height=12, scale=-0.5)
 
 plain_tree <- ggtree(tree, layout = 'rect', branch.length='none') %<+% gb.subset + geom_tiplab() +
   scale_color_continuous(name='semantic rules', value=sem_classes, low='darkgreen', high='red') +

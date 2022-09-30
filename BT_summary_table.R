@@ -72,7 +72,12 @@ distributions$sigma2_indep_int <- paste (opening_bracket, distributions$sigma2_i
 distributions$sigma2_indep <- paste (distributions$median_sigma2_indep, distributions$sigma2_indep_int, sep = " ", collapse = NULL)
 
 distributions_subset <- distributions %>%
-  dplyr::select(Traits, Phylogeny, BF, Lh_indep, Lh_dep, alpha1_dep, alpha1_indep, alpha2_dep, alpha2_indep, sigma1_dep, sigma1_indep, sigma2_dep, sigma2_indep, correlation)
+  dplyr::select(Traits, Phylogeny, BF, Lh_indep, Lh_dep, alpha1_dep, alpha1_indep, alpha2_dep, alpha2_indep, sigma1_dep, sigma1_indep, sigma2_dep, sigma2_indep, correlation) %>%
+  mutate(Phylogeny=recode(Phylogeny,
+                          "gray_et_al2009" = "Austronesian",
+                          "bouckaert_et_al2012" = "Indo-European",
+                          "kolipakam_et_al2018" = "Dravidian",
+                          "grollemund_et_al2015" = "Bantu"))
 
 distributions_subset_long <- distributions_subset %>% 
   gather(Parameter, Value, c(Lh_indep:sigma2_indep)) %>% 
@@ -98,7 +103,7 @@ latex_tab <- distributions_subset_long %>%
          `Y alpha (95% HPD)`= alpha2,
          `X sigma (95% HPD)`= sigma1,
          `Y sigma (95% HPD)`= sigma2) %>%
-  dplyr::select(Traits, Phylogeny, Model,`Marginal likelihood`, BF, `X alpha (95% HPD)`, `X sigma (95% HPD)`, `Y alpha (95% HPD)`, `Y sigma (95% HPD)`, correlation) %>%
+  dplyr::select(Phylogeny, Model,`Marginal likelihood`, BF, `X alpha (95% HPD)`, `X sigma (95% HPD)`, `Y alpha (95% HPD)`, `Y sigma (95% HPD)`, correlation) %>%
   #flextable() %>%
   #autofit() %>%
   #merge_v(j=c("Traits", "Phylogeny", "BF", "correlation")) %>%

@@ -93,18 +93,18 @@ custom_cols = viridis::viridis(40); custom_cols <- custom_cols[c(40:1)]
 
 m1 <- basemap + geom_point(
   aes(x=Longitude, y=Latitude, color=sem_classes), alpha=0.5,
-  stat = "identity", size=1.8
+  stat = "identity", size=2.3
 ) 
-m1 <- m1 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Semantic\nrules") + theme(text = element_text(size=18), legend.key.size = unit(1, 'cm')) #legend.title = element_text(size=12)
+m1 <- m1 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Semantic\nrules") + theme(text = element_text(size=22), legend.key.size = unit(1.5, 'cm')) #legend.title = element_text(size=12)
 
 #ggsave(file="output/plot_map1_sem_rules.svg", plot=m1, width=10, height=5)
 
 
 m2 <- basemap + geom_point(
   aes(x=Longitude, y=Latitude, color=agr_patterns), alpha=0.5,
-  stat = "identity", size=1.8
+  stat = "identity", size=2.3
 ) 
-m2 <- m2 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Agreement\npatterns") + theme(text = element_text(size=18), legend.key.size = unit(1, 'cm'))
+m2 <- m2 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Agreement\npatterns") + theme(text = element_text(size=22), legend.key.size = unit(1.5, 'cm'))
 
 #ggsave(file="output/plot_map2_agr_patterns.svg", plot=m2, width=10, height=5)
 

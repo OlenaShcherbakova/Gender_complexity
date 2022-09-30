@@ -13,7 +13,7 @@ taxa <- read.csv("data/phylogenies/world/taxa.csv")
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
 gb %>%
   dplyr::select(Glottocode, sem_classes, agr_patterns, taxon) %>%
-  filter(!is.na(.)) -> gb.subset
+  filter(!is.na(taxon)) -> gb.subset
 
 gb.subset$sem_classes <- as.numeric(as.character(gb.subset$sem_classes))
 gb.subset$agr_patterns <- as.numeric(as.character(gb.subset$agr_patterns))
@@ -74,8 +74,8 @@ taxa <- read.csv("data/phylogenies/bouckaert_et_al2012/taxa.csv")
 
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
 gb %>%
-  dplyr::select(Glottocode, sem_classes, agr_patterns, phon_prop, unpredictable, taxon) %>%
-  filter(!is.na(.)) -> gb.subset
+  dplyr::select(Glottocode, sem_classes, agr_patterns, taxon) %>%
+  filter(!is.na(taxon)) -> gb.subset
 
 gb.subset$sem_classes <- as.numeric(as.character(gb.subset$sem_classes))
 gb.subset$agr_patterns <- as.numeric(as.character(gb.subset$agr_patterns))
@@ -138,8 +138,8 @@ taxa <- read.csv("data/phylogenies/grollemund_et_al2015/taxa.csv")
 
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
 gb %>%
-  dplyr::select(Glottocode, sem_classes, agr_patterns, phon_prop, unpredictable, taxon) %>%
-  filter(!is.na(.)) -> gb.subset
+  dplyr::select(Glottocode, sem_classes, agr_patterns, taxon) %>%
+  filter(!is.na(taxon)) -> gb.subset
 
 gb.subset$sem_classes <- as.numeric(as.character(gb.subset$sem_classes))
 gb.subset$agr_patterns <- as.numeric(as.character(gb.subset$agr_patterns))
@@ -204,7 +204,7 @@ taxa <- read.csv("data/phylogenies/kolipakam_et_al2018/taxa.csv")
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
 gb %>%
   dplyr::select(Glottocode, sem_classes, agr_patterns, taxon) %>%
-  filter(!is.na(.)) -> gb.subset
+  filter(!is.na(taxon)) -> gb.subset
 
 gb.subset$sem_classes <- as.numeric(as.character(gb.subset$sem_classes))
 gb.subset$agr_patterns <- as.numeric(as.character(gb.subset$agr_patterns))
@@ -267,7 +267,7 @@ taxa <- read.csv("data/phylogenies/gray_et_al2009/taxa.csv")
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
 gb %>%
   dplyr::select(Glottocode, sem_classes, agr_patterns, taxon) %>%
-  filter(!is.na(.)) -> gb.subset
+  filter(!is.na(taxon)) -> gb.subset
 
 gb.subset$sem_classes <- as.numeric(as.character(gb.subset$sem_classes))
 gb.subset$agr_patterns <- as.numeric(as.character(gb.subset$agr_patterns))
@@ -323,10 +323,19 @@ agr_patterns_a <- c(physig_agr_patterns_a_l$logL, physig_agr_patterns_a_l$logL0,
 physig <- as.data.frame(rbind(sem_classes_a, agr_patterns_a, sem_classes_b, agr_patterns_b, sem_classes_dr, agr_patterns_dr, sem_classes_ie, agr_patterns_ie, sem_classes_world, agr_patterns_world))
 colnames(physig) <- c("logL", "logL0", "LR (lambda)", "p-value (lambda)", "K", "p-value (K)")
 physig <- round(physig, digits=2)
-rownames(physig) <- c("Semantic rules (Austronesian)", "Agreement patterns (Austronesian)", "Semantic rules (Bantu)", "Agreement patterns (Bantu)", "Semantic rules (Dravidian)", "Agreement patterns (Dravidian)", "Semantic rules (Indo-European)", "Agreement patterns (Indo-European)", "Semantic rules (World)", "Agreement patterns (World)")
+#rownames(physig) <- c("Semantic rules (Austronesian)", "Agreement patterns (Austronesian)", "Semantic rules (Bantu)", "Agreement patterns (Bantu)", "Semantic rules (Dravidian)", "Agreement patterns (Dravidian)", "Semantic rules (Indo-European)", "Agreement patterns (Indo-European)", "Semantic rules (World)", "Agreement patterns (World)")
 phylogeny <- as.data.frame(c(rep(c("Austronesian"), times=2), rep(c("Bantu"), times=2), rep(c("Dravidian"), times=2), rep(c("Indo-European"), times=2), rep(c("World"), times=2)))
 colnames(phylogeny) <- "Phylogeny"
 features <- as.data.frame(c(rep(c("Semantic rules", "Agreement patterns"), times=5)))
-colnames(features) <- "features"
+colnames(features) <- "Feature"
 physig <- cbind(phylogeny, features, physig)
-write.csv(physig, file=here("output_tables", "Table_phylosig_continuous.csv"), row.names = FALSE)
+write.csv(physig, file=here("output_tables", "Table_SI_phylosig_continuous.csv"), row.names = FALSE)
+
+rownames(physig) <- NULL
+
+physig_latex <- physig %>%
+  kbl(caption="Phylogenetic signal",
+    format="latex") %>% #,
+  kable_minimal(full_width = F) %>%
+  kable_styling(latex_options = c("scale_down"))  %>%
+  column_spec(1, width = "8em")

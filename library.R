@@ -142,8 +142,25 @@ load_data_final_short <- function(filename="data/GB_input.tsv") {
     else(grambank_compl$agr_patterns[i] <- 0)
   }
   
+  for (i in 1:nrow(grambank_compl)) {
+    if (grambank_compl$GB192[i] == "1") {
+      grambank_compl$phon_prop[i] <- "1"
+    } 
+    else {
+      grambank_compl$phon_prop[i] <- "0"
+    }
+  }
   
-  grambank_compl <- subset(x = grambank_compl, select = c("Glottocode", "sem_classes", "agr_patterns"))
+  for (i in 1:nrow(grambank_compl)) {
+    if (grambank_compl$GB321[i] == "1") {
+      grambank_compl$unpredictable[i] <- "1"
+    } 
+    else {
+      grambank_compl$unpredictable[i] <- "0"
+    }
+  }
+  
+  grambank_compl <- subset(x = grambank_compl, select = c("Glottocode", "sem_classes", "agr_patterns", "phon_prop", "unpredictable"))
   
   # make sure we have factors here.
   for (col in colnames(grambank_compl)) {
@@ -156,3 +173,7 @@ load_data_final_short <- function(filename="data/GB_input.tsv") {
 OUTPUTDIR_output<- here("output")		
 # create output dir if it does not exist.		
 if (!dir.exists(OUTPUTDIR_output)) { dir.create(OUTPUTDIR_output) }
+
+OUTPUTDIR_output_tables<- here("output_tables")		
+# create output dir if it does not exist.		
+if (!dir.exists(OUTPUTDIR_output_tables)) { dir.create(OUTPUTDIR_output_tables) }
