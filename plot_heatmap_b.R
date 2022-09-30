@@ -54,18 +54,20 @@ gb.subset <- gb.subset %>%
          `agreement\npatterns` = agr_patterns,
          `phonological\nproperties` = phon_prop)
 
-plain_tree <- ggtree(tree, layout = 'rect', branch.length='none') %<+% gb.subset + geom_tiplab()
+plain_tree <- ggtree(tree, layout = 'rect', branch.length='none') #%<+% gb.subset + geom_tiplab()
 
-p1 <- gheatmap(plain_tree, gb.subset[, 2:3], offset=15, width=.9, colnames_angle=0, 
-               colnames_offset_y = .5, font.size=3, hjust=0.5, colnames_position = "top") + 
+p1 <- gheatmap(plain_tree, gb.subset[, 2:3], offset=-3, width=.9, colnames_angle=0, 
+               colnames_offset_y = .5, font.size=3, hjust=0.5, colnames_position = "top", colnames=F) + 
   #ylim(-3, 85) +
-  scale_fill_viridis_c(option="D", name="continuous values:", direction=-1)
+  scale_fill_viridis_c(option="D", name="continuous values:", direction=-1, guide="none", limits=c(0, 1))
 
 p2 <- p1 + new_scale_fill()
 
-p2 <- gheatmap(p2, gb.subset[, 4:5], offset=29.4, width=.9, colnames_angle=0, 
-               colnames_offset_y = .5, font.size=3, hjust=0.5, colnames_position = "top") + 
+p2 <- gheatmap(p2, gb.subset[, 4:5], offset=11, width=.9, colnames_angle=0, 
+               colnames_offset_y = .5, font.size=3, hjust=0.5, colnames_position = "top", colnames=F) + 
   #ylim(-3, 85) +
-  scale_fill_viridis_d(option="D", name="discrete values:", direction=-1)
+  scale_fill_viridis_d(option="D", name="discrete values:", direction=-1, guide="none")
 
 ggsave(file="output/heatmap_b_rect.svg", plot=p2, width=10, height=14)
+
+heatmap_b <- p2

@@ -74,7 +74,7 @@ taxa <- read.csv("data/phylogenies/bouckaert_et_al2012/taxa.csv")
 
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
 gb %>%
-  dplyr::select(Glottocode, sem_classes, agr_patterns, taxon) %>%
+  #dplyr::select(Glottocode, sem_classes, agr_patterns, taxon) %>%
   filter(!is.na(taxon)) -> gb.subset
 
 gb.subset$sem_classes <- as.numeric(as.character(gb.subset$sem_classes))
@@ -126,7 +126,6 @@ P_agr_patterns_ie_K <- physig_agr_patterns_ie_K$P
 
 sem_classes_ie <- c(physig_sem_classes_ie_l$logL, physig_sem_classes_ie_l$logL0, LR_sem_classes_ie_l, P_lambda_sem_classes_ie_l, K_sem_classes_ie_K, P_sem_classes_ie_K)
 agr_patterns_ie <- c(physig_agr_patterns_ie_l$logL, physig_agr_patterns_ie_l$logL0, LR_agr_patterns_ie_l, P_lambda_agr_patterns_ie_l, K_agr_patterns_ie_K, P_agr_patterns_ie_K)
-
 
 
 #Bantu tree
