@@ -3,7 +3,7 @@ source(here('library.R'))
 
 #customizing the plotting function of phylopath to produce plots of phylopath output
 
-box_x = 25; box_y = 19; edge_width = 1.5; text_size=6; curvature = 0 #curvature = 0.08
+box_x = 35; box_y = 23; edge_width = 1.5; text_size=6; curvature = 0 #curvature = 0.08
 colors = c('dodgerblue', 'brown3')
 
 custom_layout <- matrix(c(
@@ -17,7 +17,7 @@ custom_layout <- as.data.frame(custom_layout)
 colnames(custom_layout) <- c("x", "y")
 custom_layout$name <- c("semantic\nrules", "agreement\npatterns", "phonological\nrules", "unpredictable")
 
-load('output/phylopath_ie.RData')
+load('output/phylopath_b.RData')
 
 colnames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
 rownames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
@@ -34,7 +34,7 @@ l$y <- custom_layout$y[match(l$name, custom_layout$name)]
 
 arrow = grid::arrow(type = 'open', 18, grid::unit(15, 'points'))
 
-p_ie <- ggplot2::ggplot(l) +
+p_b <- ggplot2::ggplot(l) +
   ggraph::geom_edge_arc(
     ggplot2::aes_(colour = ~weight, label = ~round(weight, 2)),
     edge_width = edge_width,
@@ -55,17 +55,14 @@ p_ie <- ggplot2::ggplot(l) +
   ) +
   ggraph::theme_graph(base_family = 'sans') + ggplot2::theme(text = element_text(size = 18), legend.text = element_text(size = 18), legend.key.size = unit(1.2, units="cm"), legend.position="bottom") +
   scale_x_continuous(expand = c(0.1, 0.1)) + scale_y_continuous(expand = c(0.1, 0.1)) +
-  ggtitle('Indo-European')
-p_ie
+  ggtitle('Bantu')
+p_b
 
 
 
 #plots of coefficients
-colnames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
-rownames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
-
-colnames(b_ci[["coef"]]) <- c("unpredictable", "\nphonological rules", "semantic rules", "\nagreement patterns")
-rownames(b_ci[["coef"]]) <- c("unpredictable", "\nphonological rules", "semantic rules", "\nagreement patterns")
+colnames(b_ci[["coef"]]) <- c("unpredictable", "phonological rules", "semantic rules", "agreement patterns")
+rownames(b_ci[["coef"]]) <- c("unpredictable", "phonological rules", "semantic rules", "agreement patterns")
 
 v <- colnames(b_ci$coef)
 df <- as.data.frame(b_ci$coef)
@@ -75,25 +72,25 @@ df$to <- v[df$time]
 df$lower <- c(b_ci$lower)
 df$upper <- c(b_ci$upper)
 
-df$path <- paste(df$from, df$to, sep = ' \U2192 ')
+df$path <- paste(df$from, df$to, sep = ' \U2192\n')
 
 df <- df[order(df$coef), ]
 
 df <- df[!df$coef == 0,]
 
-coef_ie <- ggplot2::ggplot(df,
-                        ggplot2::aes_(~path, ~coef, ymin = ~lower, ymax = ~upper)) +
+coef_b <- ggplot2::ggplot(df,
+                           ggplot2::aes_(~path, ~coef, ymin = ~lower, ymax = ~upper)) +
   ggplot2::geom_hline(yintercept = 0, size = 1, lty = "dashed", color="gray50") +
   ggplot2::geom_pointrange(size = 0.75) +
   ggplot2::xlab('') +
   #scale_x_continuous(expand = c(0.1, 0.1)) + scale_y_continuous(expand = c(0.1, 0.1)) +
   ggplot2::ylab('standardized coefficient \U00B1 CI') + theme_classic() + theme(axis.text.x = element_text(angle = 35, hjust=1, size = 18), axis.text.y = element_text(size = 18), text = element_text(size = 18), legend.text = element_text(size = 18))
-coef_ie
+coef_b
 
 
 #combined plot
-ie <- p_ie / coef_ie
+b <- p_b / coef_b
 
-ggsave(file="output/phylopath_ie.svg", plot=ie, width=7, height=10)
+ggsave(file="output/phylopath_b.svg", plot=b, width=7, height=10)
 
 
