@@ -92,22 +92,34 @@ basemap <- ggplot(combination) +
 custom_cols = viridis::viridis(40); custom_cols <- custom_cols[c(40:1)]
 
 m1 <- basemap + geom_point(
-  aes(x=Longitude, y=Latitude, color=sem_classes), alpha=0.5,
+  aes(x=Longitude, y=Latitude, color=sem_classes), alpha=1,
   stat = "identity", size=2.3
 ) 
-m1 <- m1 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Semantic\nrules") + theme(text = element_text(size=22), legend.key.size = unit(1.5, 'cm')) #legend.title = element_text(size=12)
-
-#ggsave(file="output/plot_map1_sem_rules.svg", plot=m1, width=10, height=5)
-
+m1 <- m1 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Semantic\nrules") + theme(text = element_text(size = 20), legend.text = element_text(size = 20), legend.key.size = unit(1.3, units="cm"), legend.position="bottom") + 
+  guides(fill = guide_colourbar())
 
 m2 <- basemap + geom_point(
-  aes(x=Longitude, y=Latitude, color=agr_patterns), alpha=0.5,
+  aes(x=Longitude, y=Latitude, color=agr_patterns), alpha=1,
   stat = "identity", size=2.3
 ) 
-m2 <- m2 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Agreement\npatterns") + theme(text = element_text(size=22), legend.key.size = unit(1.5, 'cm'))
+m2 <- m2 + scale_colour_gradientn(colours = custom_cols) + labs(color = "Agreement\npatterns") + theme(text = element_text(size = 20), legend.text = element_text(size = 20), legend.key.size = unit(1.3, units="cm"), legend.position="bottom") + 
+  guides(fill = guide_colourbar())
 
-#ggsave(file="output/plot_map2_agr_patterns.svg", plot=m2, width=10, height=5)
+m3 <- basemap + geom_point(
+  aes(x=Longitude, y=Latitude, color=phon_prop), alpha=1,
+  stat = "identity", size=2.3
+) 
+m3 <- m3 + scale_colour_manual(values = custom_cols[c(1, 40)]) + labs(color = "Phonological\nrules") + theme(text = element_text(size = 20), legend.text = element_text(size = 20), legend.key.size = unit(0.8, units="cm"), legend.position="bottom") + 
+  guides(fill = guide_colourbar())
 
-joined <- m1/m2
+m4 <- basemap + geom_point(
+  aes(x=Longitude, y=Latitude, color=unpredictable), alpha=1,
+  stat = "identity", size=2.3
+) 
+m4 <- m4 + scale_colour_manual(values = custom_cols[c(1, 40)]) + labs(color = "Unpredictable") + theme(text = element_text(size = 20), legend.text = element_text(size = 20), legend.key.size = unit(0.8, units="cm"), legend.position="bottom") + 
+  guides(fill = guide_colourbar())
+
+
+joined <- (m1|m2) / (m3|m4)
 
 ggsave(file="output/plot_maps_features.svg", plot=joined, width=10, height=10)

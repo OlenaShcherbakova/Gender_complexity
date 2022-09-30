@@ -9,3 +9,7 @@ source("phylopath_IE.R")
 source("phylopath_world.R")
 
 source("phylopath_summary_results.R")
+
+
+#plots
+source("plots_phylopath.R")
