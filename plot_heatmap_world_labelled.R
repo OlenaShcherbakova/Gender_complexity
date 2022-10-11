@@ -140,6 +140,8 @@ plain_tree <- ggtree(tree, layout = 'rect', branch.length='none') #%<+% gb.subse
 
 p1 <- gheatmap(plain_tree, gb.subset[, 2:3], offset=-5, width=.9, colnames_angle=20, 
                colnames_offset_y = 30, colnames_offset_x = 10, 
+               # adding the following to avoid pale output
+               color = NULL,
                font.size=8, hjust=0.5, colnames_position = "top") + 
   #ylim(-3, 85) +
   scale_fill_viridis_c(option="D", name="continuous\nvalues", direction=-1) +
@@ -159,6 +161,8 @@ p2 <- p1 + new_scale_fill()
 
 p2 <- gheatmap(p2, gb.subset[, 4:5], offset=23, width=.9, colnames_angle=20, 
                colnames_offset_y = 30, colnames_offset_x = 10, 
+               # adding the following to avoid pale output
+               color = NULL,
                font.size=8, hjust=0.5, colnames_position = "top") + 
   #ylim(-3, 85) +
   scale_fill_viridis_d(option="D", name="discrete\nvalues", direction=-1) + 
