@@ -10,3 +10,4 @@ all_heatmaps <- all_heatmaps + plot_annotation(tag_levels = 'A') &
   theme(plot.tag = element_text(size = 30))
 
 ggsave(file="output/heatmaps.svg", plot=all_heatmaps, width=22, height=16)
+ggsave(file="output/heatmaps.pdf", plot=all_heatmaps, width=22, height=16)

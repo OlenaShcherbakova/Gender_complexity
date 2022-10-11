@@ -14,7 +14,7 @@ tree <- sample(trees, 1)[[1]]
 
 taxa <- read.csv(TAXAS[5])
 
-gb <- load_data_final() 
+gb <- load_data_final_short() 
 
 language_glottolog <- read.csv("https://raw.githubusercontent.com/glottolog/glottolog-cldf/v4.4/cldf/languages.csv")
 

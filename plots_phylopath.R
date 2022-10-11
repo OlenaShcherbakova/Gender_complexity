@@ -92,6 +92,7 @@ model_sets <- plot_model_set(m, manual_layout = positions, edge_width = 3, curva
 #model_sets
 
 ggsave(file="output/phylopath_model_sets_custom.svg", plot=model_sets, width=45, height=30)
+ggsave(file="output/phylopath_model_sets_custom.pdf", plot=model_sets, width=45, height=30)
 
 #Plot 2: visualized best causal models with confidence intervals for each path
 source("phylopath_plots_ie.R")
@@ -100,4 +101,5 @@ source("phylopath_plots_w.R")
 
 all <- (p_ie | p_b | p_w) / (coef_ie | coef_b | coef_w)
 ggsave(file="output/phylopath_all.svg", plot=all, width=17.5, height=10.5)
+ggsave(file="output/phylopath_all.pdf", plot=all, width=17.5, height=10.5)
 
