@@ -25,7 +25,6 @@ gb <- gb %>%
 
 
 gb$taxon <- taxa$taxon[match(gb$Glottocode, taxa$glottocode)]
-#language_glottolog <- read.csv("data/languages_glottolog.csv")
 language_glottolog <- read.csv("https://raw.githubusercontent.com/glottolog/glottolog-cldf/v4.4/cldf/languages.csv")
 
 

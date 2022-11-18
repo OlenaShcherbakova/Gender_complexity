@@ -21,8 +21,6 @@ library(stringr)
 library(flextable)
 library(kableExtra)
 
-
-
 # helper function to convert and load trait data into a named vector for
 # plotting.
 get_trait_vector <- function(tree, data, variable) {
@@ -95,7 +93,7 @@ load_trees <- function(dirname, type='posterior', mappingfile='taxa.csv', rename
   trees
 }
 
-
+source("world_tree_transformation.R")
 
 load_data_intro_figure <- function(filename="data/GB_input.tsv") {
   grambank <- read.csv(filename, header = TRUE, sep = '\t', stringsAsFactors=FALSE)
