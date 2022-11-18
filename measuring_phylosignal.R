@@ -45,9 +45,6 @@ lambda_sem_classes_world_l <- physig_sem_classes_world_l[1][["lambda"]]
 LR_sem_classes_world_l <- 2*(physig_sem_classes_world_l$logL-physig_sem_classes_world_l$logL0) #performing likelihood ratio test
 P_lambda_sem_classes_world_l <- physig_sem_classes_world_l$P
 
-physig_sem_classes_world_K <- phytools::phylosig(tree.sem_classes, sem_classes, method="K", test=TRUE)
-K_sem_classes_world_K<- physig_sem_classes_world_K[1][["K"]]
-P_sem_classes_world_K <- physig_sem_classes_world_K$P
 
 tree.agr_patterns <- drop.tip(tree, as.vector(gb_geo.subset[is.na(gb_geo.subset$agr_patterns), 'Glottocode']))
 agr_patterns <- get_trait_vector(tree.agr_patterns, gb_geo.subset, 'agr_patterns')
@@ -56,18 +53,14 @@ lambda_agr_patterns_world_l <- physig_agr_patterns_world_l[1][["lambda"]]
 LR_agr_patterns_world_l <- 2*(physig_agr_patterns_world_l$logL-physig_agr_patterns_world_l$logL0) #performing likelihood-ratio test
 P_lambda_agr_patterns_world_l <- physig_agr_patterns_world_l$P
 
-physig_agr_patterns_world_K <- phytools::phylosig(tree.agr_patterns, agr_patterns, method="K", test=TRUE)
-K_agr_patterns_world_K <- physig_agr_patterns_world_K[1][["K"]]
-P_agr_patterns_world_K <- physig_agr_patterns_world_K$P
-
-sem_classes_world <- c(physig_sem_classes_world_l$logL, physig_sem_classes_world_l$logL0, LR_sem_classes_world_l, P_lambda_sem_classes_world_l, K_sem_classes_world_K, P_sem_classes_world_K)
-agr_patterns_world <- c(physig_agr_patterns_world_l$logL, physig_agr_patterns_world_l$logL0, LR_agr_patterns_world_l, P_lambda_agr_patterns_world_l, K_agr_patterns_world_K, P_agr_patterns_world_K)
+sem_classes_world <- c(lambda_sem_classes_world_l, physig_sem_classes_world_l$logL, physig_sem_classes_world_l$logL0, LR_sem_classes_world_l, P_lambda_sem_classes_world_l)
+agr_patterns_world <- c(lambda_agr_patterns_world_l, physig_agr_patterns_world_l$logL, physig_agr_patterns_world_l$logL0, LR_agr_patterns_world_l, P_lambda_agr_patterns_world_l)
 
 
 
 #Indo-European tree (1): Bouckaert et al 2012
 source("library.R")
-gb <- load_data_final()
+gb <- load_data_final_short()
 
 #loading ASJP file (v. 17) for world tree or a taxa file for a corresponding phylogeny
 taxa <- read.csv("data/phylogenies/bouckaert_et_al2012/taxa.csv")
@@ -107,9 +100,6 @@ lambda_sem_classes_ie_l <- physig_sem_classes_ie_l[1][["lambda"]]
 LR_sem_classes_ie_l <- 2*(physig_sem_classes_ie_l$logL-physig_sem_classes_ie_l$logL0) #performing likelihood ratio test
 P_lambda_sem_classes_ie_l <- physig_sem_classes_ie_l$P
 
-physig_sem_classes_ie_K <- phytools::phylosig(tree.sem_classes, sem_classes, method="K", test=TRUE)
-K_sem_classes_ie_K<- physig_sem_classes_ie_K[1][["K"]]
-P_sem_classes_ie_K <- physig_sem_classes_ie_K$P
 
 
 tree.agr_patterns <- drop.tip(tree, as.vector(gb_geo.subset[is.na(gb_geo.subset$agr_patterns), 'Glottocode']))
@@ -119,18 +109,14 @@ lambda_agr_patterns_ie_l <- physig_agr_patterns_ie_l[1][["lambda"]]
 LR_agr_patterns_ie_l <- 2*(physig_agr_patterns_ie_l$logL-physig_agr_patterns_ie_l$logL0) #performing likelihood-ratio test
 P_lambda_agr_patterns_ie_l <- physig_agr_patterns_ie_l$P
 
-physig_agr_patterns_ie_K <- phytools::phylosig(tree.agr_patterns, agr_patterns, method="K", test=TRUE)
-K_agr_patterns_ie_K <- physig_agr_patterns_ie_K[1][["K"]]
-P_agr_patterns_ie_K <- physig_agr_patterns_ie_K$P
 
-
-sem_classes_ie <- c(physig_sem_classes_ie_l$logL, physig_sem_classes_ie_l$logL0, LR_sem_classes_ie_l, P_lambda_sem_classes_ie_l, K_sem_classes_ie_K, P_sem_classes_ie_K)
-agr_patterns_ie <- c(physig_agr_patterns_ie_l$logL, physig_agr_patterns_ie_l$logL0, LR_agr_patterns_ie_l, P_lambda_agr_patterns_ie_l, K_agr_patterns_ie_K, P_agr_patterns_ie_K)
+sem_classes_ie <- c(lambda_sem_classes_ie_l, physig_sem_classes_ie_l$logL, physig_sem_classes_ie_l$logL0, LR_sem_classes_ie_l, P_lambda_sem_classes_ie_l)
+agr_patterns_ie <- c(lambda_agr_patterns_ie_l, physig_agr_patterns_ie_l$logL, physig_agr_patterns_ie_l$logL0, LR_agr_patterns_ie_l, P_lambda_agr_patterns_ie_l)
 
 
 #Bantu tree
 source("library.R")
-gb <- load_data_final()
+gb <- load_data_final_short()
 
 #loading ASJP file (v. 17) for world tree or a taxa file for a corresponding phylogeny
 taxa <- read.csv("data/phylogenies/grollemund_et_al2015/taxa.csv")
@@ -170,9 +156,6 @@ lambda_sem_classes_b_l <- physig_sem_classes_b_l[1][["lambda"]]
 LR_sem_classes_b_l <- 2*(physig_sem_classes_b_l$logL-physig_sem_classes_b_l$logL0) #performing likelihood ratio test
 P_lambda_sem_classes_b_l <- physig_sem_classes_b_l$P
 
-physig_sem_classes_b_K <- phytools::phylosig(tree.sem_classes, sem_classes, method="K", test=TRUE)
-K_sem_classes_b_K<- physig_sem_classes_b_K[1][["K"]]
-P_sem_classes_b_K <- physig_sem_classes_b_K$P
 
 
 tree.agr_patterns <- drop.tip(tree, as.vector(gb_geo.subset[is.na(gb_geo.subset$agr_patterns), 'Glottocode']))
@@ -182,13 +165,9 @@ lambda_agr_patterns_b_l <- physig_agr_patterns_b_l[1][["lambda"]]
 LR_agr_patterns_b_l <- 2*(physig_agr_patterns_b_l$logL-physig_agr_patterns_b_l$logL0) #performing likelihood-ratio test
 P_lambda_agr_patterns_b_l <- physig_agr_patterns_b_l$P
 
-physig_agr_patterns_b_K <- phytools::phylosig(tree.agr_patterns, agr_patterns, method="K", test=TRUE)
-K_agr_patterns_b_K <- physig_agr_patterns_b_K[1][["K"]]
-P_agr_patterns_b_K <- physig_agr_patterns_b_K$P
 
-
-sem_classes_b <- c(physig_sem_classes_b_l$logL, physig_sem_classes_b_l$logL0, LR_sem_classes_b_l, P_lambda_sem_classes_b_l, K_sem_classes_b_K, P_sem_classes_b_K)
-agr_patterns_b <- c(physig_agr_patterns_b_l$logL, physig_agr_patterns_b_l$logL0, LR_agr_patterns_b_l, P_lambda_agr_patterns_b_l, K_agr_patterns_b_K, P_agr_patterns_b_K)
+sem_classes_b <- c(lambda_sem_classes_b_l, physig_sem_classes_b_l$logL, physig_sem_classes_b_l$logL0, LR_sem_classes_b_l, P_lambda_sem_classes_b_l)
+agr_patterns_b <- c(lambda_agr_patterns_b_l, physig_agr_patterns_b_l$logL, physig_agr_patterns_b_l$logL0, LR_agr_patterns_b_l, P_lambda_agr_patterns_b_l)
 
 
 
@@ -235,9 +214,6 @@ lambda_sem_classes_dr_l <- physig_sem_classes_dr_l[1][["lambda"]]
 LR_sem_classes_dr_l <- 2*(physig_sem_classes_dr_l$logL-physig_sem_classes_dr_l$logL0) #performing likelihood ratio test
 P_lambda_sem_classes_dr_l <- physig_sem_classes_dr_l$P
 
-physig_sem_classes_dr_K <- phytools::phylosig(tree.sem_classes, sem_classes, method="K", test=TRUE)
-K_sem_classes_dr_K<- physig_sem_classes_dr_K[1][["K"]]
-P_sem_classes_dr_K <- physig_sem_classes_dr_K$P
 
 tree.agr_patterns <- drop.tip(tree, as.vector(gb_geo.subset[is.na(gb_geo.subset$agr_patterns), 'Glottocode']))
 agr_patterns <- get_trait_vector(tree.agr_patterns, gb_geo.subset, 'agr_patterns')
@@ -246,12 +222,9 @@ lambda_agr_patterns_dr_l <- physig_agr_patterns_dr_l[1][["lambda"]]
 LR_agr_patterns_dr_l <- 2*(physig_agr_patterns_dr_l$logL-physig_agr_patterns_dr_l$logL0) #performing likelihood-ratio test
 P_lambda_agr_patterns_dr_l <- physig_agr_patterns_dr_l$P
 
-physig_agr_patterns_dr_K <- phytools::phylosig(tree.agr_patterns, agr_patterns, method="K", test=TRUE)
-K_agr_patterns_dr_K <- physig_agr_patterns_dr_K[1][["K"]]
-P_agr_patterns_dr_K <- physig_agr_patterns_dr_K$P
 
-sem_classes_dr <- c(physig_sem_classes_dr_l$logL, physig_sem_classes_dr_l$logL0, LR_sem_classes_dr_l, P_lambda_sem_classes_dr_l, K_sem_classes_dr_K, P_sem_classes_dr_K)
-agr_patterns_dr <- c(physig_agr_patterns_dr_l$logL, physig_agr_patterns_dr_l$logL0, LR_agr_patterns_dr_l, P_lambda_agr_patterns_dr_l, K_agr_patterns_dr_K, P_agr_patterns_dr_K)
+sem_classes_dr <- c(lambda_sem_classes_dr_l, physig_sem_classes_dr_l$logL, physig_sem_classes_dr_l$logL0, LR_sem_classes_dr_l, P_lambda_sem_classes_dr_l)
+agr_patterns_dr <- c(lambda_agr_patterns_dr_l, physig_agr_patterns_dr_l$logL, physig_agr_patterns_dr_l$logL0, LR_agr_patterns_dr_l, P_lambda_agr_patterns_dr_l)
 
 
 
@@ -298,9 +271,6 @@ lambda_sem_classes_a_l <- physig_sem_classes_a_l[1][["lambda"]]
 LR_sem_classes_a_l <- 2*(physig_sem_classes_a_l$logL-physig_sem_classes_a_l$logL0) #performing likelihood ratio test
 P_lambda_sem_classes_a_l <- physig_sem_classes_a_l$P
 
-physig_sem_classes_a_K <- phytools::phylosig(tree.sem_classes, sem_classes, method="K", test=TRUE)
-K_sem_classes_a_K<- physig_sem_classes_a_K[1][["K"]]
-P_sem_classes_a_K <- physig_sem_classes_a_K$P
 
 tree.agr_patterns <- drop.tip(tree, as.vector(gb_geo.subset[is.na(gb_geo.subset$agr_patterns), 'Glottocode']))
 agr_patterns <- get_trait_vector(tree.agr_patterns, gb_geo.subset, 'agr_patterns')
@@ -309,18 +279,14 @@ lambda_agr_patterns_a_l <- physig_agr_patterns_a_l[1][["lambda"]]
 LR_agr_patterns_a_l <- 2*(physig_agr_patterns_a_l$logL-physig_agr_patterns_a_l$logL0) #performing likelihood-ratio test
 P_lambda_agr_patterns_a_l <- physig_agr_patterns_a_l$P
 
-physig_agr_patterns_a_K <- phytools::phylosig(tree.agr_patterns, agr_patterns, method="K", test=TRUE)
-K_agr_patterns_a_K <- physig_agr_patterns_a_K[1][["K"]]
-P_agr_patterns_a_K <- physig_agr_patterns_a_K$P
-
-sem_classes_a <- c(physig_sem_classes_a_l$logL, physig_sem_classes_a_l$logL0, LR_sem_classes_a_l, P_lambda_sem_classes_a_l, K_sem_classes_a_K, P_sem_classes_a_K)
-agr_patterns_a <- c(physig_agr_patterns_a_l$logL, physig_agr_patterns_a_l$logL0, LR_agr_patterns_a_l, P_lambda_agr_patterns_a_l, K_agr_patterns_a_K, P_agr_patterns_a_K)
+sem_classes_a <- c(lambda_sem_classes_a_l, physig_sem_classes_a_l$logL, physig_sem_classes_a_l$logL0, LR_sem_classes_a_l, P_lambda_sem_classes_a_l)
+agr_patterns_a <- c(lambda_agr_patterns_a_l, physig_agr_patterns_a_l$logL, physig_agr_patterns_a_l$logL0, LR_agr_patterns_a_l, P_lambda_agr_patterns_a_l)
 
 
 
 #Making a table out of two measures of phylogenetic signal
 physig <- as.data.frame(rbind(sem_classes_a, agr_patterns_a, sem_classes_b, agr_patterns_b, sem_classes_dr, agr_patterns_dr, sem_classes_ie, agr_patterns_ie, sem_classes_world, agr_patterns_world))
-colnames(physig) <- c("logL", "logL0", "LR (lambda)", "p-value (lambda)", "K", "p-value (K)")
+colnames(physig) <- c("lambda", "logL", "logL0", "LR (lambda)", "p-value (lambda)")
 physig <- round(physig, digits=2)
 #rownames(physig) <- c("Semantic rules (Austronesian)", "Agreement patterns (Austronesian)", "Semantic rules (Bantu)", "Agreement patterns (Bantu)", "Semantic rules (Dravidian)", "Agreement patterns (Dravidian)", "Semantic rules (Indo-European)", "Agreement patterns (Indo-European)", "Semantic rules (World)", "Agreement patterns (World)")
 phylogeny <- as.data.frame(c(rep(c("Austronesian"), times=2), rep(c("Bantu"), times=2), rep(c("Dravidian"), times=2), rep(c("Indo-European"), times=2), rep(c("World"), times=2)))

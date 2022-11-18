@@ -82,7 +82,7 @@ plot(s)
 
 table <- cbind(s$model, s$CICc, s$delta_CICc, s$l, s$w, s$k, s$q, s$C, s$p) %>%
   as.data.frame() 
-colnames(table) <- c("Model", "CICs", "delta_CICs", "Relative likelihood", "CICc weight", "n of independence claims", "n of parameters", "C statistic", "p-value")
+colnames(table) <- c("Model", "CICc", "delta_CICc", "Relative likelihood", "CICc weight", "n of independence claims", "n of parameters", "C statistic", "p-value")
 
 Model <- c("null", "a1", "a2", "a3", "b1", "b2", "c1", "c2", "d1", "d2")
 verbose_names <- c("null", 

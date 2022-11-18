@@ -56,13 +56,13 @@ gb.subset <- gb.subset %>%
 plain_tree <- ggtree(tree, layout = 'rect', branch.length='none') %<+% gb.subset + geom_tiplab(size=5)
 
 p1 <- gheatmap(plain_tree, gb.subset[, 2:3], offset=5, width=1, colnames_angle=0, 
-               colnames_offset_y = .5, font.size=5, hjust=0.5, colnames_position = "top") + #ylim(-3, 1500) +
+               colnames_offset_y = .5, font.size=5, hjust=0.5, color = NULL, colnames_position = "top") + #ylim(-3, 1500) +
   scale_fill_viridis_c(option="D", name="continuous values:", direction=-1, limits=c(0, 1))
 
 p2 <- p1 + new_scale_fill()
 
 p2 <- gheatmap(p2, gb.subset[, 4:5], offset=18, width=1, colnames_angle=0, 
-               colnames_offset_y = .5, font.size=5, hjust=0.5, colnames_position = "top") + #ylim(-3, 1500) +
+               colnames_offset_y = .5, font.size=5, hjust=0.5, color = NULL, colnames_position = "top") + #ylim(-3, 1500) +
   scale_fill_viridis_d(option="D", name="discrete values:", direction=-1) + 
   theme(legend.box = "horizontal", legend.position = "bottom",
         text = element_text(size = 25),

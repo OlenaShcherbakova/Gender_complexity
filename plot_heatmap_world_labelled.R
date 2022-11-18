@@ -172,6 +172,6 @@ p2 <- gheatmap(p2, gb.subset[, 4:5], offset=23, width=.9, colnames_angle=20,
   xlim(-1, 115) + ylim(-3, 520)
 p2
 
-ggsave(file="output/heatmap_world_rect.svg", plot=p2, width=11, height=10)
+ggsave(file="output/heatmap_world_rect.svg", plot=p2, width=11, height=12)
 
 heatmap_world <- p2

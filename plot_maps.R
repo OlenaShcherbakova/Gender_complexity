@@ -120,6 +120,6 @@ m4 <- m4 + scale_colour_manual(values = custom_cols[c(1, 40)]) + labs(color = "U
   guides(fill = guide_colourbar())
 
 
-joined <- (m1|m2) / (m3|m4)
+joined <- (m1|m4) / (m2|m3)
 
 ggsave(file="output/plot_maps_features.svg", plot=joined, width=10, height=10)
