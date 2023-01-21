@@ -1,0 +1,11 @@
+"","Model","Phylogeny","CICs","delta_CICs","Relative likelihood","CICc weight","n of independence claims","n of parameters","C statistic","p-value"
+"1","agreement patterns ~ semantic rules + phonological rules + unpredictable","Indo-European",25.16,0,1,0.95,3,7,7.42,0.283
+"2","agreement patterns ~ semantic rules","Indo-European",32.92,7.77,0.02,0.02,5,5,21.05,0.021
+"3","agreement patterns ~ unpredictable","Indo-European",34.04,8.88,0.01,0.01,5,5,22.16,0.014
+"4","null","Indo-European",35.3,10.15,0.01,0.01,6,4,26.09,0.01
+"5","agreement patterns ~ semantic rules, semantic rules ~ phonological rules","Indo-European",35.71,10.56,0.01,0,4,6,21.01,0.007
+"6","agreement patterns ~ semantic rules, semantic rules ~ phonological rules + unpredictable","Indo-European",36.85,11.69,0,0,3,7,19.11,0.004
+"7","agreement patterns ~ semantic rules + phonological rules","Indo-European",39.52,14.36,0,0,4,6,24.81,0.002
+"8","agreement patterns ~ phonological rules","Indo-European",42.4,17.24,0,0,5,5,30.52,0.001
+"9","agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable","Indo-European",42.46,17.3,0,0,3,7,24.72,0
+"10","agreement patterns ~ phonological rules, phonological rules ~ semantic rules","Indo-European",46.21,21.06,0,0,4,6,31.5,0

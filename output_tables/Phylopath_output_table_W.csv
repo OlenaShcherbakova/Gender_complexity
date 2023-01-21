@@ -1,0 +1,11 @@
+"","Model","Phylogeny","CICs","delta_CICs","Relative likelihood","CICc weight","n of independence claims","n of parameters","C statistic","p-value"
+"1","agreement patterns ~ semantic rules + phonological rules + unpredictable","World",20.1,0,1,0.95,3,7,5.86,0.439
+"2","agreement patterns ~ semantic rules","World",27.8,7.7,0.02,0.02,5,5,17.67,0.061
+"3","agreement patterns ~ semantic rules + phonological rules","World",28.3,8.2,0.02,0.02,4,6,16.13,0.041
+"4","agreement patterns ~ semantic rules, semantic rules ~ phonological rules","World",28.96,8.86,0.01,0.01,4,6,16.78,0.032
+"5","agreement patterns ~ semantic rules, semantic rules ~ phonological rules + unpredictable","World",30.61,10.51,0.01,0,3,7,16.37,0.012
+"6","agreement patterns ~ unpredictable","World",51.79,31.69,0,0,5,5,41.66,0
+"7","null","World",58.24,38.14,0,0,6,4,50.15,0
+"8","agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable","World",58.33,38.23,0,0,3,7,44.09,0
+"9","agreement patterns ~ phonological rules","World",59.6,39.5,0,0,5,5,49.47,0
+"10","agreement patterns ~ phonological rules, phonological rules ~ semantic rules","World",60.92,40.82,0,0,4,6,48.74,0

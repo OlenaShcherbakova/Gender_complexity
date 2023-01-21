@@ -1,0 +1,11 @@
+"Phylogeny","features","logL","logL0","LR (lambda)","p-value (lambda)","K","p-value (K)"
+"Austronesian","Semantic rules",141.86,143.47,-3.24,1,0.44,0.17
+"Austronesian","Agreement patterns",179.04,174.52,9.05,0,0.52,0.06
+"Bantu","Semantic rules",13.37,13.37,0,1,0.33,0.2
+"Bantu","Agreement patterns",31.26,31.26,0,1,0.22,0.89
+"Dravidian","Semantic rules",3.71,3.71,0,1,0.38,0.98
+"Dravidian","Agreement patterns",5.23,5.23,0.02,0.89,0.64,0.19
+"Indo-European","Semantic rules",22.2,19.46,5.47,0.02,0.43,0.02
+"Indo-European","Agreement patterns",-0.44,-11.87,22.87,0,0.78,0
+"World","Semantic rules",654.72,321.85,665.73,0,0.68,0
+"World","Agreement patterns",512.73,-174.91,1375.28,0,1.17,0
