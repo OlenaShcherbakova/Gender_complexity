@@ -41,5 +41,5 @@ source("measuring_phylosignal_discrete.R") #discrete/binary features
 #plots
 source("plots_phylopath.R")
 source("plot_maps.R")
-source("plot_intro_map.R")
+#source("plot_intro_map.R") this can only be run on the full GB sample
 source("plot_heatmaps.R")
