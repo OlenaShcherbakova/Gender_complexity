@@ -122,3 +122,4 @@ m4 <- m4 + scale_colour_manual(values = custom_cols[c(1, 40)]) + labs(color = "U
 joined <- (m1|m4) / (m2|m3)
 
 ggsave(file="output/plot_maps_features.svg", plot=joined, width=10, height=10)
+ggsave(file="output/plot_maps_features.pdf", plot=joined, width=10, height=10)

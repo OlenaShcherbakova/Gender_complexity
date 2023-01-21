@@ -90,3 +90,4 @@ m1 <- m1 + scale_color_manual(values = c("gray50", "red")) +
 m1
 
 ggsave(file="output/plot_map_intro.svg", plot=m1, width=10, height=5)
+ggsave(file="output/plot_map_intro.pdf", plot=m1, width=10, height=5)
