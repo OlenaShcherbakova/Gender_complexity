@@ -1,0 +1,203 @@
+BayesTraits V4.0 (Feb 21 2022)
+Mark Pagel and Andrew Meade
+www.evolution.reading.ac.uk
+
+
+Please select the model of evolution to use.
+1)	MultiState
+4)	Continuous: Random Walk (Model A)
+5)	Continuous: Directional (Model B)
+6)	Continuous: Regression
+7)	Independent Contrast
+8)	Independent Contrast: Correlation
+9)	Independent Contrast: Regression
+12)	Fat Tail
+13)	Geo
+Please select the analysis method to use.
+1)	Maximum Likelihood.
+2)	MCMC
+Options:
+Model:                           Continuous: Random Walk
+Tree File Name:                  posterior.trees
+Data File Name:                  features_Semantic_classes_Agreement_patterns.txt
+Log File Name:                   features_Semantic_classes_Agreement_patterns.txt.Log.txt
+Save Initial Trees:              False
+Save Trees:                      False
+Summary:                         False
+Seed:                            1150289323
+Precision:                       64 bits
+Cores:                           1
+Analysis Type:                   MCMC
+Sample Period:                   1000
+Iterations:                      1010000
+Burn in:                         10000
+MCMC ML Start:                   False
+Schedule File:                   features_Semantic_classes_Agreement_patterns.txt.Schedule.txt
+Rate Dev:                        AutoTune
+No of Rates:                     2
+Test for trait correlation:      True
+Kappa:                           Not in use
+Delta:                           Not in use
+Lambda:                          Not in use
+OU:                              Not in use
+Restrictions:
+    alpha-1                      None
+    alpha-2                      None
+Prior Information:
+    Priors
+        alpha-1 - uniform -100.00 100.00 
+        alpha-2 - uniform -100.00 100.00 
+Tree Information
+     Trees:                      1
+     Taxa:                       482
+     Sites:                      2
+
+Options:
+Model:                           Continuous: Random Walk
+Tree File Name:                  posterior.trees
+Data File Name:                  features_Semantic_classes_Agreement_patterns.txt
+Log File Name:                   features_Semantic_classes_Agreement_patterns.dependent.log.Log.txt
+Save Initial Trees:              False
+Save Trees:                      False
+Summary:                         False
+Seed:                            1150289323
+Precision:                       64 bits
+Cores:                           1
+Analysis Type:                   MCMC
+Sample Period:                   1000
+Iterations:                      10000
+Burn in:                         1000
+MCMC ML Start:                   False
+Schedule File:                   features_Semantic_classes_Agreement_patterns.dependent.log.Schedule.txt
+Rate Dev:                        AutoTune
+No of Rates:                     2
+Test for trait correlation:      True
+Kappa:                           Not in use
+Delta:                           Not in use
+Lambda:                          Not in use
+OU:                              Not in use
+Scale Tree:                      2.610086
+Restrictions:
+    alpha-1                      None
+    alpha-2                      None
+Prior Information:
+    Priors
+        alpha-1 - uniform -100.00 100.00 
+        alpha-2 - uniform -100.00 100.00 
+Tree Information
+     Trees:                      1
+     Taxa:                       482
+     Sites:                      2
+Iteration	Lh	Lh Prior	Elapsed Seconds	State
+0	-3108.660147	-10.596635	0.000000	Burn In
+1000	-3006.113932	-10.596635	37.000000	Burn In
+2000	-2866.567686	-10.596635	74.000000	Sampling
+3000	-2211.891652	-10.596635	110.000000	Sampling
+4000	-2134.648457	-10.596635	146.000000	Sampling
+5000	-2135.442654	-10.596635	183.000000	Sampling
+6000	-2134.023111	-10.596635	219.000000	Sampling
+7000	-2133.956428	-10.596635	256.000000	Sampling
+8000	-2135.647293	-10.596635	292.000000	Sampling
+9000	-2133.873445	-10.596635	329.000000	Sampling
+10000	-2133.714768	-10.596635	365.000000	Sampling
+11000	-2133.913512	-10.596635	402.000000	Stepping Stone Sampler
+12000	-2134.428177	-10.596635	438.000000	Stepping Stone Sampler
+13000	-2136.677227	-10.596635	475.000000	Stepping Stone Sampler
+14000	-2135.015998	-10.596635	511.000000	Stepping Stone Sampler
+15000	-2134.407682	-10.596635	547.000000	Stepping Stone Sampler
+16000	-2135.937909	-10.596635	583.000000	Stepping Stone Sampler
+17000	-2135.178991	-10.596635	620.000000	Stepping Stone Sampler
+18000	-2134.346951	-10.596635	656.000000	Stepping Stone Sampler
+19000	-2134.271285	-10.596635	692.000000	Stepping Stone Sampler
+20000	-2135.840708	-10.596635	729.000000	Stepping Stone Sampler
+21000	-2133.808110	-10.596635	765.000000	Stepping Stone Sampler
+22000	-2134.732169	-10.596635	802.000000	Stepping Stone Sampler
+23000	-2133.982050	-10.596635	838.000000	Stepping Stone Sampler
+24000	-2135.774916	-10.596635	875.000000	Stepping Stone Sampler
+25000	-2135.562137	-10.596635	911.000000	Stepping Stone Sampler
+26000	-2136.454740	-10.596635	948.000000	Stepping Stone Sampler
+27000	-2134.083419	-10.596635	985.000000	Stepping Stone Sampler
+28000	-2138.599276	-10.596635	1021.000000	Stepping Stone Sampler
+29000	-2138.634161	-10.596635	1057.000000	Stepping Stone Sampler
+30000	-2138.593626	-10.596635	1093.000000	Stepping Stone Sampler
+31000	-2133.711466	-10.596635	1129.000000	Stepping Stone Sampler
+32000	-2138.010788	-10.596635	1166.000000	Stepping Stone Sampler
+33000	-2134.804455	-10.596635	1202.000000	Stepping Stone Sampler
+34000	-2137.530074	-10.596635	1239.000000	Stepping Stone Sampler
+35000	-2142.419249	-10.596635	1275.000000	Stepping Stone Sampler
+36000	-2136.961294	-10.596635	1312.000000	Stepping Stone Sampler
+37000	-2135.384923	-10.596635	1348.000000	Stepping Stone Sampler
+38000	-2136.574453	-10.596635	1385.000000	Stepping Stone Sampler
+39000	-2133.814134	-10.596635	1421.000000	Stepping Stone Sampler
+40000	-2137.241530	-10.596635	1458.000000	Stepping Stone Sampler
+41000	-2136.023236	-10.596635	1494.000000	Stepping Stone Sampler
+42000	-2134.340054	-10.596635	1530.000000	Stepping Stone Sampler
+43000	-2133.815389	-10.596635	1566.000000	Stepping Stone Sampler
+44000	-2134.222695	-10.596635	1603.000000	Stepping Stone Sampler
+45000	-2139.684085	-10.596635	1639.000000	Stepping Stone Sampler
+46000	-2133.709544	-10.596635	1676.000000	Stepping Stone Sampler
+47000	-2135.055464	-10.596635	1713.000000	Stepping Stone Sampler
+48000	-2144.670328	-10.596635	1749.000000	Stepping Stone Sampler
+49000	-2133.845240	-10.596635	1785.000000	Stepping Stone Sampler
+50000	-2135.186304	-10.596635	1822.000000	Stepping Stone Sampler
+51000	-2142.022739	-10.596635	1858.000000	Stepping Stone Sampler
+52000	-2138.094083	-10.596635	1895.000000	Stepping Stone Sampler
+53000	-2134.191367	-10.596635	1931.000000	Stepping Stone Sampler
+54000	-2139.070793	-10.596635	1968.000000	Stepping Stone Sampler
+55000	-2134.089491	-10.596635	2004.000000	Stepping Stone Sampler
+56000	-2134.234486	-10.596635	2041.000000	Stepping Stone Sampler
+57000	-2146.189466	-10.596635	2077.000000	Stepping Stone Sampler
+58000	-2139.006666	-10.596635	2114.000000	Stepping Stone Sampler
+59000	-2143.654525	-10.596635	2150.000000	Stepping Stone Sampler
+60000	-2137.974347	-10.596635	2187.000000	Stepping Stone Sampler
+61000	-2135.379953	-10.596635	2223.000000	Stepping Stone Sampler
+62000	-2137.731587	-10.596635	2260.000000	Stepping Stone Sampler
+63000	-2133.816358	-10.596635	2296.000000	Stepping Stone Sampler
+64000	-2153.234787	-10.596635	2333.000000	Stepping Stone Sampler
+65000	-2140.706229	-10.596635	2369.000000	Stepping Stone Sampler
+66000	-2152.125095	-10.596635	2406.000000	Stepping Stone Sampler
+67000	-2135.241263	-10.596635	2443.000000	Stepping Stone Sampler
+68000	-2146.490564	-10.596635	2480.000000	Stepping Stone Sampler
+69000	-2152.126061	-10.596635	2516.000000	Stepping Stone Sampler
+70000	-2137.623429	-10.596635	2552.000000	Stepping Stone Sampler
+71000	-2147.910721	-10.596635	2589.000000	Stepping Stone Sampler
+72000	-2134.490044	-10.596635	2625.000000	Stepping Stone Sampler
+73000	-2143.637360	-10.596635	2662.000000	Stepping Stone Sampler
+74000	-2146.014749	-10.596635	2699.000000	Stepping Stone Sampler
+75000	-2199.140365	-10.596635	2736.000000	Stepping Stone Sampler
+76000	-2141.400721	-10.596635	2772.000000	Stepping Stone Sampler
+77000	-2137.643208	-10.596635	2809.000000	Stepping Stone Sampler
+78000	-2139.012772	-10.596635	2846.000000	Stepping Stone Sampler
+79000	-2144.359823	-10.596635	2882.000000	Stepping Stone Sampler
+80000	-2135.581108	-10.596635	2919.000000	Stepping Stone Sampler
+81000	-2150.189159	-10.596635	2955.000000	Stepping Stone Sampler
+82000	-2153.648632	-10.596635	2991.000000	Stepping Stone Sampler
+83000	-2156.865616	-10.596635	3027.000000	Stepping Stone Sampler
+84000	-2169.127008	-10.596635	3064.000000	Stepping Stone Sampler
+85000	-2150.996572	-10.596635	3100.000000	Stepping Stone Sampler
+86000	-2145.824690	-10.596635	3136.000000	Stepping Stone Sampler
+87000	-2169.500179	-10.596635	3172.000000	Stepping Stone Sampler
+88000	-2142.444974	-10.596635	3209.000000	Stepping Stone Sampler
+89000	-2152.489889	-10.596635	3245.000000	Stepping Stone Sampler
+90000	-2141.110209	-10.596635	3282.000000	Stepping Stone Sampler
+91000	-2291.210616	-10.596635	3318.000000	Stepping Stone Sampler
+92000	-2198.314805	-10.596635	3355.000000	Stepping Stone Sampler
+93000	-2263.614557	-10.596635	3391.000000	Stepping Stone Sampler
+94000	-2166.549931	-10.596635	3428.000000	Stepping Stone Sampler
+95000	-2272.071911	-10.596635	3464.000000	Stepping Stone Sampler
+96000	-2702.129774	-10.596635	3501.000000	Stepping Stone Sampler
+97000	-2352.634935	-10.596635	3537.000000	Stepping Stone Sampler
+98000	-2359.088668	-10.596635	3573.000000	Stepping Stone Sampler
+99000	-2443.599261	-10.596635	3609.000000	Stepping Stone Sampler
+100000	-2580.555096	-10.596635	3646.000000	Stepping Stone Sampler
+101000	-2836.350795	-10.596635	3682.000000	Stepping Stone Sampler
+102000	-3149.909914	-10.596635	3719.000000	Stepping Stone Sampler
+103000	-2693.982731	-10.596635	3756.000000	Stepping Stone Sampler
+104000	-3154.427237	-10.596635	3792.000000	Stepping Stone Sampler
+105000	-2819.131973	-10.596635	3829.000000	Stepping Stone Sampler
+106000	-2875.885386	-10.596635	3865.000000	Stepping Stone Sampler
+107000	-3207.460555	-10.596635	3901.000000	Stepping Stone Sampler
+108000	-2434.026581	-10.596635	3938.000000	Stepping Stone Sampler
+109000	-3097.700779	-10.596635	3974.000000	Stepping Stone Sampler
+110000	-3126.742178	-10.596635	4009.000000	Stepping Stone Sampler
+Sec:	4010.000000

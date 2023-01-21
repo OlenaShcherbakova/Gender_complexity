@@ -1,0 +1,46 @@
+Options:
+Model:                           Continuous: Random Walk
+Tree File Name:                  posterior.trees
+Data File Name:                  features_Semantic_classes_Agreement_patterns.txt
+Log File Name:                   features_Semantic_classes_Agreement_patterns.independent.log.Log.txt
+Save Initial Trees:              False
+Save Trees:                      False
+Summary:                         False
+Seed:                            1331692975
+Precision:                       64 bits
+Cores:                           1
+Analysis Type:                   MCMC
+Sample Period:                   1000
+Iterations:                      10000
+Burn in:                         1000
+MCMC ML Start:                   False
+Schedule File:                   features_Semantic_classes_Agreement_patterns.independent.log.Schedule.txt
+Rate Dev:                        AutoTune
+No of Rates:                     2
+Test for trait correlation:      False
+Kappa:                           Not in use
+Delta:                           Not in use
+Lambda:                          Not in use
+OU:                              Not in use
+Scale Tree:                      2.610086
+Restrictions:
+    alpha-1                      None
+    alpha-2                      None
+Prior Information:
+    Priors
+        alpha-1 - uniform -100.00 100.00 
+        alpha-2 - uniform -100.00 100.00 
+Tree Information
+     Trees:                      1
+     Taxa:                       482
+     Sites:                      2
+Iteration	Lh	Tree No	Alpha 1	Alpha 2	Sigma^2 1 	Sigma^2 2 	R Trait 1 2	
+2000	-2148.422275	1	3.229529124343	2.582832995148	20.152685398726	26.978607957362	0.000000000000	
+3000	-2148.593644	1	2.413570999029	3.012720042285	20.258667195212	26.856561434066	0.000000000000	
+4000	-2146.739396	1	3.245206524458	3.586805017064	20.152845289503	26.790662623789	0.000000000000	
+5000	-2147.879010	1	2.451660135393	3.646933540839	20.248729178843	26.790184061412	0.000000000000	
+6000	-2147.735956	1	3.643807845494	4.280548705278	20.184726270172	26.859184054036	0.000000000000	
+7000	-2147.432957	1	3.150650886091	4.317947070518	20.153137264490	26.867483798290	0.000000000000	
+8000	-2148.555744	1	2.357912077010	4.138420828091	20.274068360883	26.831939896965	0.000000000000	
+9000	-2147.370636	1	2.979604706111	3.046356966823	20.161317933191	26.849638105688	0.000000000000	
+10000	-2147.142927	1	3.259812510003	3.123147899673	20.153068759650	26.835260985344	0.000000000000	

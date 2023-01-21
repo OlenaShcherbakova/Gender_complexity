@@ -1,0 +1,46 @@
+Options:
+Model:                           Continuous: Random Walk
+Tree File Name:                  posterior.trees
+Data File Name:                  features_Semantic_classes_Agreement_patterns.txt
+Log File Name:                   features_Semantic_classes_Agreement_patterns.dependent.log.Log.txt
+Save Initial Trees:              False
+Save Trees:                      False
+Summary:                         False
+Seed:                            1150289323
+Precision:                       64 bits
+Cores:                           1
+Analysis Type:                   MCMC
+Sample Period:                   1000
+Iterations:                      10000
+Burn in:                         1000
+MCMC ML Start:                   False
+Schedule File:                   features_Semantic_classes_Agreement_patterns.dependent.log.Schedule.txt
+Rate Dev:                        AutoTune
+No of Rates:                     2
+Test for trait correlation:      True
+Kappa:                           Not in use
+Delta:                           Not in use
+Lambda:                          Not in use
+OU:                              Not in use
+Scale Tree:                      2.610086
+Restrictions:
+    alpha-1                      None
+    alpha-2                      None
+Prior Information:
+    Priors
+        alpha-1 - uniform -100.00 100.00 
+        alpha-2 - uniform -100.00 100.00 
+Tree Information
+     Trees:                      1
+     Taxa:                       482
+     Sites:                      2
+Iteration	Lh	Tree No	Alpha 1	Alpha 2	Sigma^2 1 	Sigma^2 2 	R Trait 1 2	
+2000	-2866.567686	1	52.000595659753	14.598163522897	421.188224448632	47.015495827564	0.677887474491	
+3000	-2211.891652	1	9.913467734634	6.467134248802	27.728504057729	28.136037513232	0.305195493367	
+4000	-2134.648457	1	2.656857919584	3.957838276125	20.203599173744	26.807140753050	0.227825565841	
+5000	-2135.442654	1	3.463800652635	2.702477724782	20.163700838515	26.938387877413	0.227016314185	
+6000	-2134.023111	1	3.366569848744	3.268496367635	20.156884585906	26.813486935136	0.228897755235	
+7000	-2133.956428	1	3.220363884081	3.241986791596	20.152630277322	26.816927559700	0.229298768651	
+8000	-2135.647293	1	2.372560861605	4.008542526469	20.269913758878	26.812994618458	0.226470145006	
+9000	-2133.873445	1	3.052962786323	3.316884714633	20.156602302934	26.807817186228	0.229714885713	
+10000	-2133.714768	1	3.151282819849	3.707873150535	20.153125315334	26.790941807150	0.229418200400	
