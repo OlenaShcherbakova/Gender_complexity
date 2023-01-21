@@ -9,3 +9,4 @@ data/GB_wide_strict.tsv
 *.docx
 *.pptx
 *.pdf
+proposal_plots.R
