@@ -95,7 +95,7 @@ load_trees <- function(dirname, type='posterior', mappingfile='taxa.csv', rename
 
 source("world_tree_transformation.R")
 
-load_data_intro_figure <- function(filename="data/GB_input.tsv") {
+load_data_intro_figure <- function(filename="data/GB_wide_strict.tsv") {
   grambank <- read.csv(filename, header = TRUE, sep = '\t', stringsAsFactors=FALSE)
   colnames(grambank)[colnames(grambank)=="Language_ID"] <- "Glottocode"
   #grambank[is.na(grambank)] <- "-"
