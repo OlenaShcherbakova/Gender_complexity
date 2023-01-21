@@ -1,7 +1,7 @@
 #library.R file
 
 library(ape)
-library(bayestraitr)
+library(bayestraitr) #remotes::install_github("SamPassmore/bayestraitr")
 library(tidyverse)
 library(dplyr)
 library(phytools)
@@ -16,7 +16,11 @@ library(ggtree)
 library(ggnewscale)
 library(caper)
 library(patchwork)
-library(rethinking)
+#if rethinking is not installed: 
+#install.packages(c("coda","mvtnorm","devtools","loo","dagitty","shape"))
+#remotes::install_github("stan-dev/cmdstanr")
+#devtools::install_github("rmcelreath/rethinking")
+library(rethinking) 
 library(stringr)
 library(flextable)
 library(kableExtra)
@@ -175,3 +179,4 @@ if (!dir.exists(OUTPUTDIR_output)) { dir.create(OUTPUTDIR_output) }
 OUTPUTDIR_output_tables<- here("output_tables")		
 # create output dir if it does not exist.		
 if (!dir.exists(OUTPUTDIR_output_tables)) { dir.create(OUTPUTDIR_output_tables) }
+
