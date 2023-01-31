@@ -87,7 +87,13 @@ coef_ie <- ggplot2::ggplot(df,
   ggplot2::geom_pointrange(size = 0.75) +
   ggplot2::xlab('') +
   #scale_x_continuous(expand = c(0.1, 0.1)) + scale_y_continuous(expand = c(0.1, 0.1)) +
-  ggplot2::ylab('standardized coefficient \U00B1 CI') + theme_classic() + theme(axis.text.x = element_text(angle = 35, hjust=1, size = 18), axis.text.y = element_text(size = 18), text = element_text(size = 18), legend.text = element_text(size = 18))
+  ggplot2::ylab('standardized coefficient \U00B1 CI') + 
+  theme_classic() + 
+  theme(axis.text.x = element_text(angle = 35, 
+                                   hjust=1, size = 18), 
+        axis.text.y = element_text(size = 18), 
+        text = element_text(size = 18), 
+        legend.text = element_text(size = 18))
 coef_ie
 
 

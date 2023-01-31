@@ -123,3 +123,5 @@ joined <- (m1|m4) / (m2|m3)
 
 ggsave(file="output/plot_maps_features.svg", plot=joined, width=10, height=10)
 ggsave(file="output/plot_maps_features.pdf", plot=joined, width=10, height=10)
+ggsave(file="output/plot_maps_features.jpeg", plot=joined, 
+       width=10, height=10, dpi=300)

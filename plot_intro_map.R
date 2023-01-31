@@ -91,3 +91,4 @@ m1
 
 ggsave(file="output/plot_map_intro.svg", plot=m1, width=10, height=5)
 ggsave(file="output/plot_map_intro.pdf", plot=m1, width=10, height=5)
+ggsave(file="output/plot_map_intro.jpeg", plot=m1, width=10, height=5, dpi=300)
