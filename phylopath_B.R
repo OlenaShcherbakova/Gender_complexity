@@ -6,7 +6,7 @@ source(here('library.R'))
 TREESET <- "data/phylogenies/grollemund_et_al2015/"
 
 trees <- load_trees(TREESET)
-grambank_phylopath_compl <- load_data_final() 
+grambank_phylopath_compl <- load_data_final_short() 
 
 grambank_phylopath_compl <- grambank_phylopath_compl %>%
   filter(sem_classes != "0" | agr_patterns != "0")
