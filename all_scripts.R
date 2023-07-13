@@ -43,3 +43,6 @@ source("plots_phylopath.R")
 source("plot_maps.R")
 #source("plot_intro_map.R") this can only be run on the full GB sample
 source("plot_heatmaps.R")
+
+#robustness check: are results robust when different trees from posterior distribution are used?
+source("robustness_check_tree_choice.R")
