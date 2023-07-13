@@ -110,7 +110,11 @@ table_final <- table %>%
   rename(Model = verbose_names) %>%
   mutate_at(c(2:9), as.numeric) %>%
   mutate(across(c(2:8), round, 2)) %>%
-  mutate(across(c(9), round, 3)) %>%
+  mutate(`p-value` = case_when(
+    `p-value` < 0.001 ~ "<0.001",
+    `p-value` < 0.01 ~ "<0.01",
+    TRUE ~ as.character(round(`p-value`,2))
+  )) %>% 
   mutate(Phylogeny = "World") %>%
   relocate(Phylogeny, .after = Model)
 
@@ -132,7 +136,11 @@ table_final_latex <- table %>%
   rename(Model = verbose_names) %>%
   mutate_at(c(2:9), as.numeric) %>%
   mutate(across(c(2:8), round, 2)) %>%
-  mutate(across(c(9), round, 3)) %>%
+  mutate(`p-value` = case_when(
+    `p-value` < 0.001 ~ "<0.001",
+    `p-value` < 0.01 ~ "<0.01",
+    TRUE ~ as.character(round(`p-value`,2))
+  )) %>% 
   mutate(Phylogeny = "World") %>%
   relocate(Phylogeny, .after = Model) %>%
   kbl(caption="Phylogenetic path analysis (World)",
