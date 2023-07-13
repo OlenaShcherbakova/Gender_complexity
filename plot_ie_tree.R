@@ -14,7 +14,7 @@ tree <- sample(trees, 1)[[1]]
 
 taxa <- read.csv(TAXAS[1])
 
-gb <- load_data_final()
+gb <- load_data_final_short()
 
 gb$sem_classes <- as.numeric(as.character(gb$sem_classes))
 gb$agr_patterns <- as.numeric(as.character(gb$agr_patterns))
