@@ -8,6 +8,11 @@ TREESETS <- c(
   "data/phylogenies/grollemund_et_al2015/"
 )
 
+TAXAS <- c(
+  "data/phylogenies/bouckaert_et_al2012/taxa.csv",
+  "data/phylogenies/grollemund_et_al2015/taxa.csv"
+)
+
 for (TREESET in 1:length(TREESETS)) {
   trees <- load_trees(TREESETS[TREESET])
   grambank_phylopath_compl <- load_data_final_short()
@@ -52,13 +57,13 @@ for (TREESET in 1:length(TREESETS)) {
       
       
       taxa <-
-        read.csv("data/phylogenies/bouckaert_et_al2012/taxa.csv")
+        read.csv(TAXAS[TREESET])
       grambank_phylopath_compl$taxon <-
         taxa$taxon[match(grambank_phylopath_compl$Glottocode, taxa$glottocode)]
       grambank_phylopath_compl <- grambank_phylopath_compl %>%
         dplyr::filter(!is.na(taxon))
       grambank_phylopath_compl <-
-        grambank_phylopath_compl[grambank_phylopath_compl$taxon %in% trees[[1]]$tip.label, ]
+        grambank_phylopath_compl[grambank_phylopath_compl$taxon %in% trees[[1]]$tip.label,]
       
       # prune data and trees to match tips
       tree <- drop.tip(tree,
@@ -80,7 +85,12 @@ for (TREESET in 1:length(TREESETS)) {
                       unpredictable,
                       taxon) %>%
         filter(
-          !is.na(Glottocode),!is.na(sem_classes),!is.na(agr_patterns),!is.na(phon_prop),!is.na(unpredictable),!is.na(taxon)
+          !is.na(Glottocode),
+          !is.na(sem_classes),
+          !is.na(agr_patterns),
+          !is.na(phon_prop),
+          !is.na(unpredictable),
+          !is.na(taxon)
         ) %>%
         mutate_at(c("sem_classes", "agr_patterns"), as.numeric) %>%
         mutate_at(c("phon_prop", "unpredictable"), as.factor) -> grambank_phylopath_compl
@@ -126,7 +136,20 @@ for (TREESET in 1:length(TREESETS)) {
         y = c(1, 0, 0, 1)
       )
       
-      p <- phylo_path(m, grambank_phylopath_compl, tree)
+      if (TREESET == 1) {
+        p <- phylo_path(m, grambank_phylopath_compl, tree)
+      } else {
+        p <-
+          phylo_path(
+            m,
+            grambank_phylopath_compl,
+            tree,
+            upper.bound = 1,
+            lower.bound = 0
+          )
+      }
+      
+      #p <- phylo_path(m, grambank_phylopath_compl, tree)
       
       #"Specifically, it reports the model name, the number of independence claims made by the model (k), the number of parameters (q), the C statistic and the accompanying p-value. A significant p-value would indicate that the available evidence rejects the model. It also reports model selection information: the C-statistic information criterion corrected for small sample sizes (CICc), the difference in CICc with the top model (delta_CICc) and finally the associated relative likelihoods (l) and CICc weights (w)" (van der Bijl 2018)
       s <- summary(p)
