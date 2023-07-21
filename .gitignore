@@ -11,3 +11,5 @@ data/GB_wide_strict.tsv
 *.pdf
 *.jpeg
 proposal_plots.R
+
+*grambank-analysed*
