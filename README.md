@@ -24,11 +24,11 @@ GitHub locations:
 In this project, we fetch the data from the Zenodo locations by downloading a zip file and expanding it. We have also made tables and files available derived from these sources in this repos so that users may run the analysis without engaging with fetching from Zenodo.
 
 The following phylogenies were used in the analyses:
-global/world tree: Jäger (2018)
-Dravidian: Kolipakam et al. (2018)
-Bantu: Grollemund et al. (2015)
-Indo-European: Bouckaert et al. (2012)
-Austronesian: Gray et al. (2009)
+* global/world tree: Jäger (2018)
+* Dravidian: Kolipakam et al. (2018)
+* Bantu: Grollemund et al. (2015)
+* Indo-European: Bouckaert et al. (2012)
+* Austronesian: Gray et al. (2009)
 
 ### References
 Bouckaert, Remco, Philippe Lemey, Michael Dunn, Simon J. Greenhill, Alexander V. Alekseyenko, Alexei J. Drummond, Russell D. Gray, Marc A. Suchard & Quentin D. Atkinson. 2012. Mapping the Origins and Expansion of the Indo-European Language Family. _Science_ 337(6097). 957–960. https://doi.org/10.1126/science.1219669.
