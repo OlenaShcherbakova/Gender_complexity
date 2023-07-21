@@ -1,0 +1,7 @@
+"Phylogeny","Feature","D value","p-value: departure from phylogenetic randomness","p-value: departure from Brownian threshold model"
+"Indo-European","Phonological rules",0.06,"<0.01","0.46"
+"Indo-European","Unpredictable",0.06,"0.25","0.04"
+"Indo-European","Phonological rules",0.06,"0.74","<0.001"
+"Indo-European","Unpredictable",0.06,"0.19","0.02"
+"Indo-European","Phonological rules",0.06,"<0.001","0.91"
+"Indo-European","Unpredictable",0.06,"<0.001","0.62"
