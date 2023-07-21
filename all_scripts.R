@@ -1,9 +1,6 @@
 #The order of running scripts
 source("library.R")
 
-#All necessary Grambank files have been already generated with the script below. One can run it only with access to the GB_wide_strict.tsv (only when the database becomes publicaly available). 
-#source("generating_GB_input_file.R")
-
 #preparing input files for running Continuous method within BayesTraits
 source("preparing_files_for_BT.R") #main results
 source("preparing_files_for_BT_full.R") #Supplementary Materials results
@@ -46,3 +43,7 @@ source("plot_heatmaps.R")
 
 #robustness check: are results robust when different trees from posterior distribution are used?
 source("robustness_check_tree_choice.R")
+
+#additional phylogenetic path analyses on the global tree when Bantu and Indo-European languages are excluded
+source("phylopath_plots_w_without_B.R")
+source("phylopath_plots_w_without_IE.R")
