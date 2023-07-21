@@ -1,6 +1,9 @@
 # Code accompanying the paper *Evolutionary pathways of complexity in gender systems* by Olena Shcherbakova and Marc Allassonnière-Tang
 
+## Running analyses
 Please consult ```all_scripts.R``` script to run the scripts in the correct order and/or run the scripts of your choice.
+
+## Data sources
 
 The data that serves as the input for the analysis comes from Grambank, (v1.0, Skirgård et al (2023) and Glottolog (v4.5)).
 
