@@ -30,7 +30,7 @@ Bantu: Grollemund et al. (2015)
 Indo-European: Bouckaert et al. (2012)
 Austronesian: Gray et al. (2009)
 
-References:
+### References
 Bouckaert, Remco, Philippe Lemey, Michael Dunn, Simon J. Greenhill, Alexander V. Alekseyenko, Alexei J. Drummond, Russell D. Gray, Marc A. Suchard & Quentin D. Atkinson. 2012. Mapping the Origins and Expansion of the Indo-European Language Family. _Science_ 337(6097). 957–960. https://doi.org/10.1126/science.1219669.
 
 Grollemund, Rebecca, Simon Branford, Koen Bostoen, Andrew Meade, Chris Venditti & Mark Pagel. 2015. Bantu expansion shows that habitat alters the route and pace of human dispersals. _Proceedings of the National Academy of Sciences_ 112(43). 13296–13301. https://doi.org/10.1073/pnas.1503793112.
