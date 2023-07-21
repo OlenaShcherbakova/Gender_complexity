@@ -97,6 +97,12 @@ load_trees <- function(dirname, type='posterior', mappingfile='taxa.csv', rename
   trees
 }
 
+if (!dir.exists("grambank-analysed")) {
+  source("get_external_data.R")
+}
+source("obtaining_files_from_grambank-analysed.R")
+source("generating_GB_input_file.R")
+
 source("world_tree_transformation.R")
 
 load_data_intro_figure <- function(filename="data/GB_wide_strict.tsv") {
