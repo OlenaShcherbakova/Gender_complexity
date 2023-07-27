@@ -94,3 +94,4 @@ coef_w
 w_no_B <- p_w / coef_w
 
 ggsave(file="output/phylopath_w_no_B.svg", plot=w_no_B, width=7, height=10)
+ggsave(file="output/phylopath_w_no_B.jpg", plot=w_no_B, width=7, height=10)
