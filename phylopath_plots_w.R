@@ -3,7 +3,7 @@ source(here('library.R'))
 
 #customizing the plotting function of phylopath to produce plots of phylopath output
 
-box_x = 25; box_y = 19; edge_width = 1.5; text_size=6; curvature = 0 #curvature = 0.08
+box_x = 25; box_y = 19; edge_width = 1.5; text_size=6; curvature = 0.1 #curvature = 0.08
 colors = c('dodgerblue', 'brown3')
 
 custom_layout <- matrix(c(
