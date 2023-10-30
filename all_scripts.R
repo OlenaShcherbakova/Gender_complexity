@@ -21,8 +21,6 @@ source("Marginal_Likelihoods_BF_full.R")
 source("sigmas_distribution_full.R")
 source("BT_summary_table_full.R")
 
-
-
 #phylogenetic path analysis; visualization and extracting output files
 source("customizing_phylopath_plot_model_set_function.R")
 source("phylopath_B.R")
@@ -43,7 +41,3 @@ source("plot_heatmaps.R")
 
 #robustness check: are results robust when different trees from posterior distribution are used?
 source("robustness_check_tree_choice.R")
-
-#additional phylogenetic path analyses on the global tree when Bantu and Indo-European languages are excluded
-source("phylopath_plots_w_without_B.R")
-source("phylopath_plots_w_without_IE.R")
