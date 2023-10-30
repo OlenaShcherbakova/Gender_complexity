@@ -1,11 +1,20 @@
-"","Model","Phylogeny","CICs","delta_CICs","Relative likelihood","CICc weight","n of independence claims","n of parameters","C statistic","p-value"
-"1","agreement patterns ~ semantic rules + phonological rules + unpredictable","Indo-European",25.16,0,1,0.95,3,7,7.42,0.283
-"2","agreement patterns ~ semantic rules","Indo-European",32.92,7.77,0.02,0.02,5,5,21.05,0.021
-"3","agreement patterns ~ unpredictable","Indo-European",34.04,8.88,0.01,0.01,5,5,22.16,0.014
-"4","null","Indo-European",35.3,10.15,0.01,0.01,6,4,26.09,0.01
-"5","agreement patterns ~ semantic rules, semantic rules ~ phonological rules","Indo-European",35.71,10.56,0.01,0,4,6,21.01,0.007
-"6","agreement patterns ~ semantic rules, semantic rules ~ phonological rules + unpredictable","Indo-European",36.85,11.69,0,0,3,7,19.11,0.004
-"7","agreement patterns ~ semantic rules + phonological rules","Indo-European",39.52,14.36,0,0,4,6,24.81,0.002
-"8","agreement patterns ~ phonological rules","Indo-European",42.4,17.24,0,0,5,5,30.52,0.001
-"9","agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable","Indo-European",42.46,17.3,0,0,3,7,24.72,0
-"10","agreement patterns ~ phonological rules, phonological rules ~ semantic rules","Indo-European",46.21,21.06,0,0,4,6,31.5,0
+"","Model","Phylogeny","CICc","delta_CICc","Relative likelihood","CICc weight","n of independence claims","n of parameters","C statistic","p-value"
+"1","agreement patterns ~ semantic rules + phonological rules + unpredictable","Indo-European",25.99,0,1,0.64,3,7,8.26,"0.22"
+"2","semantic rules ~ agreement patterns, phonological rules ~ agreement patterns, unpredictable ~ agreement patterns","Indo-European",28.37,2.38,0.3,0.19,3,7,10.64,"0.1"
+"3","unpredictable ~ agreement patterns","Indo-European",29.8,3.81,0.15,0.1,5,5,17.92,"0.06"
+"4","semantic rules ~ agreement patterns","Indo-European",33.18,7.19,0.03,0.02,5,5,21.31,"0.02"
+"5","agreement patterns ~ unpredictable","Indo-European",33.89,7.9,0.02,0.01,5,5,22.01,"0.02"
+"6","agreement patterns ~ semantic rules","Indo-European",34,8.01,0.02,0.01,5,5,22.12,"0.01"
+"7","phonological rules ~ agreement patterns, phonological rules  ~ semantic rules + unpredictable","Indo-European",34.86,8.87,0.01,0.01,3,7,17.13,"<0.01"
+"8","semantic rules ~ agreement patterns, semantic rules ~ phonological rules","Indo-European",35.67,9.68,0.01,0.01,4,6,20.96,"<0.01"
+"9","null","Indo-European",36.15,10.16,0.01,0,6,4,26.94,"<0.01"
+"10","agreement patterns ~ semantic rules, semantic rules ~ phonological rules","Indo-European",36.59,10.6,0,0,4,6,21.88,"<0.01"
+"11","semantic rules ~ agreement patterns, phonological rules ~ agreement patterns","Indo-European",37.04,11.05,0,0,4,6,22.33,"<0.01"
+"12","agreement patterns ~ semantic rules, semantic rules ~ phonological rules + unpredictable","Indo-European",37.79,11.8,0,0,3,7,20.05,"<0.01"
+"13","semantic rules ~ agreement patterns, semantic rules ~ phonological rules + unpredictable","Indo-European",38.61,12.62,0,0,3,7,20.88,"<0.01"
+"14",NA,"Indo-European",39.54,13.55,0,0,5,5,27.67,"<0.01"
+"15","agreement patterns ~ semantic rules + phonological rules","Indo-European",40.24,14.25,0,0,4,6,25.53,"<0.01"
+"16","agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable","Indo-European",41.79,15.8,0,0,3,7,24.05,"<0.001"
+"17","phonological rules ~ agreement patterns, phonological rules ~ semantic rules","Indo-European",41.9,15.91,0,0,4,6,27.19,"<0.001"
+"18","agreement patterns ~ phonological rules","Indo-European",42.74,16.75,0,0,5,5,30.86,"<0.001"
+"19","agreement patterns ~ phonological rules, phonological rules ~ semantic rules","Indo-European",45.52,19.53,0,0,4,6,30.81,"<0.001"

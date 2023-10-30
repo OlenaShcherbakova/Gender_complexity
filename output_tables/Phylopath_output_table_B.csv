@@ -1,11 +1,20 @@
-"","Model","Phylogeny","CICs","delta_CICs","Relative likelihood","CICc weight","n of independence claims","n of parameters","C statistic","p-value"
-"1","agreement patterns ~ semantic rules, semantic rules ~ phonological rules + unpredictable","Bantu",17.42,0,1,0.98,3,7,1.53,0.958
-"2","agreement patterns ~ semantic rules, semantic rules ~ phonological rules","Bantu",25.35,7.93,0.02,0.02,4,6,11.95,0.153
-"3","agreement patterns ~ semantic rules","Bantu",32.95,15.53,0,0,5,5,21.97,0.015
-"4","agreement patterns ~ semantic rules + phonological rules","Bantu",35.07,17.65,0,0,4,6,21.67,0.006
-"5","agreement patterns ~ semantic rules + phonological rules + unpredictable","Bantu",37.53,20.11,0,0,3,7,21.63,0.001
-"6","agreement patterns ~ phonological rules, phonological rules ~ semantic rules","Bantu",42.66,25.24,0,0,4,6,29.26,0
-"7","agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable","Bantu",44.98,27.56,0,0,3,7,29.09,0
-"8","agreement patterns ~ unpredictable","Bantu",49.33,31.91,0,0,5,5,38.35,0
-"9","agreement patterns ~ phonological rules","Bantu",50.82,33.4,0,0,5,5,39.84,0
-"10","null","Bantu",52.12,34.69,0,0,6,4,43.47,0
+"","Model","Phylogeny","CICc","delta_CICc","Relative likelihood","CICc weight","n of independence claims","n of parameters","C statistic","p-value"
+"1","agreement patterns ~ semantic rules, semantic rules ~ phonological rules + unpredictable","Bantu",17.59,0,1,0.9,3,7,1.69,"0.95"
+"2","semantic rules ~ agreement patterns, semantic rules ~ phonological rules + unpredictable","Bantu",22.5,4.91,0.09,0.08,3,7,6.61,"0.36"
+"3","agreement patterns ~ semantic rules, semantic rules ~ phonological rules","Bantu",25.52,7.93,0.02,0.02,4,6,12.12,"0.15"
+"4","semantic rules ~ agreement patterns, semantic rules ~ phonological rules","Bantu",28.82,11.23,0,0,4,6,15.42,"0.05"
+"5","agreement patterns ~ semantic rules","Bantu",33.12,15.53,0,0,5,5,22.14,"0.01"
+"6","semantic rules ~ agreement patterns, phonological rules ~ agreement patterns, unpredictable ~ agreement patterns","Bantu",34.33,16.73,0,0,3,7,18.43,"<0.01"
+"7","semantic rules ~ agreement patterns, phonological rules ~ agreement patterns","Bantu",34.87,17.28,0,0,4,6,21.47,"<0.01"
+"8","semantic rules ~ agreement patterns","Bantu",35.1,17.51,0,0,5,5,24.11,"<0.01"
+"9","agreement patterns ~ semantic rules + phonological rules","Bantu",35.24,17.65,0,0,4,6,21.84,"<0.01"
+"10","agreement patterns ~ semantic rules + phonological rules + unpredictable","Bantu",37.7,20.11,0,0,3,7,21.8,"<0.01"
+"11","agreement patterns ~ phonological rules, phonological rules ~ semantic rules","Bantu",42.73,25.14,0,0,4,6,29.33,"<0.001"
+"12","phonological rules ~ agreement patterns, phonological rules ~ semantic rules","Bantu",44.21,26.62,0,0,4,6,30.81,"<0.001"
+"13","agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable","Bantu",44.98,27.39,0,0,3,7,29.09,"<0.001"
+"14","phonological rules ~ agreement patterns, phonological rules  ~ semantic rules + unpredictable","Bantu",46.41,28.82,0,0,3,7,30.51,"<0.001"
+"15","unpredictable ~ agreement patterns","Bantu",49.34,31.75,0,0,5,5,38.35,"<0.001"
+"16","agreement patterns ~ unpredictable","Bantu",49.5,31.91,0,0,5,5,38.51,"<0.001"
+"17",NA,"Bantu",50.84,33.25,0,0,5,5,39.86,"<0.001"
+"18","agreement patterns ~ phonological rules","Bantu",50.99,33.4,0,0,5,5,40,"<0.001"
+"19","null","Bantu",52.28,34.69,0,0,6,4,43.64,"<0.001"
