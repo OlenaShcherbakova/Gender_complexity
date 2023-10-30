@@ -101,7 +101,7 @@ table <- cbind(s$model, s$CICc, s$delta_CICc, s$l, s$w, s$k, s$q, s$C, s$p) %>%
 colnames(table) <- c("Model", "CICc", "delta_CICc", "Relative likelihood", "CICc weight", "n of independence claims", "n of parameters", "C statistic", "p-value")
 
 Model <- c("null", "a1", "a2", "a3",
-           "a1_r", "a2_R", "a3_r",
+           "a1_r", "a2_r", "a3_r",
            "b1", "b2", 
            "b1_r", "b2_r", 
            "c1", "c2",
