@@ -4,7 +4,7 @@
 filepath <- file.path(tempfile())
 
 ##grambank-analysed: downloading, zipping and moving
-grambank_analysed_fn <- c("https://zenodo.org/record/7740822/files/grambank/grambank-analysed-v1.0.zip")
+grambank_analysed_fn <- c("https://zenodo.org/records/7740822/files/grambank/grambank-analysed-v1.0.zip")
 
 utils::download.file(file.path(grambank_analysed_fn), destfile = filepath)
 utils::unzip(zipfile = filepath, exdir = "grambank-analysed")
