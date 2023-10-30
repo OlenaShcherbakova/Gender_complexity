@@ -19,15 +19,15 @@ custom_layout$name <- c("semantic\nrules", "agreement\npatterns", "phonological\
 
 load('output/phylopath_w.RData')
 
-colnames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
-rownames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
+colnames(a_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
+rownames(a_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
 
-min <- -max(abs(b_ci[["coef"]]))
-max <- max(abs(b_ci[["coef"]]))
+min <- -max(abs(a_ci[["coef"]]))
+max <- max(abs(a_ci[["coef"]]))
 
 #plot of the best causal model
 
-g <- igraph::graph_from_adjacency_matrix(b_ci[["coef"]], weighted = TRUE)
+g <- igraph::graph_from_adjacency_matrix(a_ci[["coef"]], weighted = TRUE)
 l <- ggraph::create_layout(g, 'igraph', algorithm = "sugiyama") #algorithm does not work
 l$x <- custom_layout$x[match(l$name, custom_layout$name)]
 l$y <- custom_layout$y[match(l$name, custom_layout$name)]
@@ -61,19 +61,19 @@ p_w
 
 
 #plots of coefficients
-colnames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
-rownames(b_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
+colnames(a_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
+rownames(a_ci[["coef"]]) <- c("unpredictable", "phonological\nrules", "semantic\nrules", "agreement\npatterns")
 
-colnames(b_ci[["coef"]]) <- c("unpredictable", "phonological rules", "semantic rules", "\nagreement patterns")
-rownames(b_ci[["coef"]]) <- c("unpredictable", "phonological rules", "semantic rules", "\nagreement patterns")
+colnames(a_ci[["coef"]]) <- c("unpredictable", "phonological rules", "semantic rules", "\nagreement patterns")
+rownames(a_ci[["coef"]]) <- c("unpredictable", "phonological rules", "semantic rules", "\nagreement patterns")
 
-v <- colnames(b_ci$coef)
-df <- as.data.frame(b_ci$coef)
+v <- colnames(a_ci$coef)
+df <- as.data.frame(a_ci$coef)
 df$from <- rownames(df)
 df <- stats::reshape(df, varying = v, 'coef', direction = 'long')
 df$to <- v[df$time]
-df$lower <- c(b_ci$lower)
-df$upper <- c(b_ci$upper)
+df$lower <- c(a_ci$lower)
+df$upper <- c(a_ci$upper)
 
 df$path <- paste(df$from, df$to, sep = ' \U2192 ')
 
