@@ -1,6 +1,5 @@
 #custom plots from phylogenetic path analysis output
 
-
 #Plot 1: model sets tested on three phylogenies
 
 #creating a custom plot of the tested causal models in the phylogenetic path analysis on 1705 languages for three following variables: NC, Vf, FWO
@@ -57,17 +56,35 @@ m <- define_model_set(
   a2 = c(agr_patterns~phon_prop),
   a3 = c(agr_patterns~unpredictable),
   
+  #their reverse versions
+  a1_r = c(sem_classes~agr_patterns),
+  a2_r = c(phon_prop~agr_patterns),
+  a3_r = c(unpredictable~agr_patterns),
+  
   #models with several distinct predictors: 2 and 3
   b1 = c(agr_patterns~sem_classes + phon_prop),
   b2 = c(agr_patterns~sem_classes + phon_prop + unpredictable),
+  
+  #their reverse versions
+  b1_r = c(sem_classes~agr_patterns,  phon_prop~agr_patterns),
+  b2_r = c(sem_classes~agr_patterns, phon_prop~agr_patterns, 
+           unpredictable~agr_patterns),
   
   #models where agreement patterns depend on only one of the predictors, but two predictors are casually connected among themselves
   c1 = c(agr_patterns~sem_classes, sem_classes~phon_prop),
   c2 = c(agr_patterns~phon_prop, phon_prop~sem_classes),
   
+  #their reverse versions
+  c1_r = c(sem_classes~agr_patterns, sem_classes~phon_prop),
+  c2_r = c(phon_prop~agr_patterns, phon_prop~sem_classes),
+  
   #extensions of 'c' models: 'unpredictable' is casually linked with one of the other precictors 
   d1 = c(agr_patterns~sem_classes, sem_classes~phon_prop + unpredictable),
-  d2 = c(agr_patterns~phon_prop, phon_prop~sem_classes + unpredictable)
+  d2 = c(agr_patterns~phon_prop, phon_prop~sem_classes + unpredictable),
+  
+  #their reverse versions
+  d1_r = c(sem_classes~agr_patterns, sem_classes~phon_prop + unpredictable),
+  d2_r = c(phon_prop~agr_patterns, phon_prop~sem_classes + unpredictable)
 )
 
 positions <- data.frame(
@@ -75,6 +92,7 @@ positions <- data.frame(
   x = c(0, 0, 1, 1),
   y = c(1, 0, 0, 1)
 )
+
 
 source("customizing_phylopath_plot_model_set_function.R")
 
@@ -92,11 +110,11 @@ model_sets <- plot_model_set(m, manual_layout = positions, edge_width = 3, curva
 #model_sets
 
 ggsave(file="output/phylopath_model_sets_custom.svg", 
-       plot=model_sets, width=45, height=30)
+       plot=model_sets, width=49, height=30)
 ggsave(file="output/phylopath_model_sets_custom.pdf", 
-       plot=model_sets, width=45, height=30)
+       plot=model_sets, width=49, height=30)
 ggsave(file="output/phylopath_model_sets_custom.jpeg", 
-       plot=model_sets, width=25, height=15, dpi=300)
+       plot=model_sets, width=49, height=30, dpi=300)
 
 #Plot 2: visualized best causal models with confidence intervals for each path
 source("phylopath_plots_ie.R")
