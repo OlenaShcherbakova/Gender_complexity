@@ -100,10 +100,20 @@ load_trees <- function(dirname, type='posterior', mappingfile='taxa.csv', rename
 if (!dir.exists("grambank-analysed")) {
   source("get_external_data.R")
 }
-source("obtaining_files_from_grambank-analysed.R")
-source("generating_GB_input_file.R")
 
-source("world_tree_transformation.R")
+if(!file.exists("data/GB_wide_strict.tsv") | 
+   !file.exists("data/glottolog-cldf_wide_df.tsv"))
+source("obtaining_files_from_grambank-analysed.R")
+
+
+if(!file.exists("data/GB_input.tsv")) {
+  source("generating_GB_input_file.R")
+}
+
+
+if(!file.exists("data/phylogenies/world/posterior.trees")) {
+  source("world_tree_transformation.R")
+}
 
 load_data_intro_figure <- function(filename="data/GB_wide_strict.tsv") {
   grambank <- read.csv(filename, header = TRUE, sep = '\t', stringsAsFactors=FALSE)
