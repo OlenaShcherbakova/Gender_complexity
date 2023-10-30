@@ -52,17 +52,35 @@ m <- define_model_set(
   a2 = c(agr_patterns~phon_prop),
   a3 = c(agr_patterns~unpredictable),
   
+  #their reverse versions
+  a1_r = c(sem_classes~agr_patterns),
+  a2_r = c(phon_prop~agr_patterns),
+  a3_r = c(unpredictable~agr_patterns),
+  
   #models with several distinct predictors: 2 and 3
   b1 = c(agr_patterns~sem_classes + phon_prop),
   b2 = c(agr_patterns~sem_classes + phon_prop + unpredictable),
+  
+  #their reverse versions
+  b1_r = c(sem_classes~agr_patterns,  phon_prop~agr_patterns),
+  b2_r = c(sem_classes~agr_patterns, phon_prop~agr_patterns, 
+           unpredictable~agr_patterns),
   
   #models where agreement patterns depend on only one of the predictors, but two predictors are casually connected among themselves
   c1 = c(agr_patterns~sem_classes, sem_classes~phon_prop),
   c2 = c(agr_patterns~phon_prop, phon_prop~sem_classes),
   
+  #their reverse versions
+  c1_r = c(sem_classes~agr_patterns, sem_classes~phon_prop),
+  c2_r = c(phon_prop~agr_patterns, phon_prop~sem_classes),
+  
   #extensions of 'c' models: 'unpredictable' is casually linked with one of the other precictors 
   d1 = c(agr_patterns~sem_classes, sem_classes~phon_prop + unpredictable),
-  d2 = c(agr_patterns~phon_prop, phon_prop~sem_classes + unpredictable)
+  d2 = c(agr_patterns~phon_prop, phon_prop~sem_classes + unpredictable),
+  
+  #their reverse versions
+  d1_r = c(sem_classes~agr_patterns, sem_classes~phon_prop + unpredictable),
+  d2_r = c(phon_prop~agr_patterns, phon_prop~sem_classes + unpredictable)
 )
 
 positions <- data.frame(
@@ -86,20 +104,49 @@ table <- cbind(s$model, s$CICc, s$delta_CICc, s$l, s$w, s$k, s$q, s$C, s$p) %>%
   as.data.frame() 
 colnames(table) <- c("Model", "CICc", "delta_CICc", "Relative likelihood", "CICc weight", "n of independence claims", "n of parameters", "C statistic", "p-value")
 
-Model <- c("null", "a1", "a2", "a3", "b1", "b2", "c1", "c2", "d1", "d2")
+Model <- c("null", "a1", "a2", "a3",
+           "a1_r", "a2_R", "a3_r",
+           "b1", "b2", 
+           "b1_r", "b2_r", 
+           "c1", "c2",
+           "c1_r", "c2_r", 
+           "d1", "d2",
+           "d1_r", "d2_r")
+
 verbose_names <- c("null", 
+                   #a1, a2, a3
                    "agreement patterns ~ semantic rules", 
                    "agreement patterns ~ phonological rules", 
                    "agreement patterns ~ unpredictable",
                    
+                   #a1, a2, a3 reverse
+                   "semantic rules ~ agreement patterns", 
+                   "phonological rules ~ agreement patterns", 
+                   "unpredictable ~ agreement patterns",
+                   
+                   #b1, b2
                    "agreement patterns ~ semantic rules + phonological rules",
                    "agreement patterns ~ semantic rules + phonological rules + unpredictable",
                    
+                   #b1, b2 reverse
+                   "semantic rules ~ agreement patterns, phonological rules ~ agreement patterns",
+                   "semantic rules ~ agreement patterns, phonological rules ~ agreement patterns, unpredictable ~ agreement patterns",
+                   
+                   #c1, c2
                    "agreement patterns ~ semantic rules, semantic rules ~ phonological rules",
                    "agreement patterns ~ phonological rules, phonological rules ~ semantic rules",
                    
+                   #c1, c2 reverse
+                   "semantic rules ~ agreement patterns, semantic rules ~ phonological rules",
+                   "phonological rules ~ agreement patterns, phonological rules ~ semantic rules",
+                   
+                   #d1, d2
                    "agreement patterns ~ semantic rules, semantic rules ~ phonological rules + unpredictable",
-                   "agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable")
+                   "agreement patterns ~ phonological rules, phonological rules  ~ semantic rules + unpredictable",
+                   
+                   #d1, d2 reverse
+                   "semantic rules ~ agreement patterns, semantic rules ~ phonological rules + unpredictable",
+                   "phonological rules ~ agreement patterns, phonological rules  ~ semantic rules + unpredictable")
 
 model_names_df <- as.data.frame(cbind(Model, verbose_names))
 
@@ -109,7 +156,7 @@ table_final <- table %>%
   relocate(verbose_names, everything()) %>%
   rename(Model = verbose_names) %>%
   mutate_at(c(2:9), as.numeric) %>%
-  mutate(across(c(2:8), round, 2)) %>%
+  mutate_at(c(2:8), round, 2) %>%
   mutate(`p-value` = case_when(
     `p-value` < 0.001 ~ "<0.001",
     `p-value` < 0.01 ~ "<0.01",
