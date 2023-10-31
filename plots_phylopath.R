@@ -103,18 +103,22 @@ custom_names <- c("semantic\nrules", "agreement\npatterns", "phonological\nrules
 named_vector <- setNames(custom_names, names)
 
 #plot_model_set(m, manual_layout = positions)
-model_sets <- plot_model_set(m, manual_layout = positions, edge_width = 3, curvature=0,
-                             text_size = 21, labels=named_vector, #21
-                             box_x=130, box_y=90,
-                             arrow = grid::arrow(type = 'closed', 30, grid::unit(12, 'points')))
+model_sets <- plot_model_set(m, nrow=3, manual_layout = positions, 
+                             edge_width = 3, curvature=0,
+                             text_size = 12, #21
+                             labels=named_vector, 
+                             box_x=110, #130
+                             box_y=90,
+                             arrow = grid::arrow(type = 'closed', 
+                                                 30, grid::unit(12, 'points')))
 #model_sets
 
 ggsave(file="output/phylopath_model_sets_custom.svg", 
-       plot=model_sets, width=49, height=30)
+       plot=model_sets, width=49, height=30, dpi=600)
 ggsave(file="output/phylopath_model_sets_custom.pdf", 
        plot=model_sets, width=49, height=30)
 ggsave(file="output/phylopath_model_sets_custom.jpeg", 
-       plot=model_sets, width=49, height=30, dpi=300)
+       plot=model_sets, width=49, height=30, dpi=600)
 
 #Plot 2: visualized best causal models with confidence intervals for each path
 source("phylopath_plots_ie.R")
