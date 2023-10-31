@@ -73,12 +73,13 @@ plot_model_set <- function(model_set, labels = NULL, algorithm = 'kk', manual_la
   
   # Build plot.
   ggraph::ggraph(l) +
-    ggraph::geom_edge_arc(strength = curvature, arrow = arrow, edge_width = edge_width,
+    ggraph::geom_edge_arc(strength = curvature, arrow = arrow, 
+                          edge_width = edge_width,
                           end_cap = ggraph::rectangle(box_x, box_y, 'mm'),
                           start_cap = ggraph::rectangle(box_x, box_y, 'mm')) +
     ggraph::geom_node_text(ggplot2::aes_(label = ~name), size = text_size) +
     ggraph::facet_edges(~model, nrow = nrow) +
     ggplot2::scale_x_continuous(expand = c(0.3, 0)) + #expand = c(0.2, 0)
     ggplot2::scale_y_continuous(expand = c(0.2, 0)) +
-    ggraph::theme_graph(foreground = 'grey80', base_family = 'sans', strip_text_size=50) 
+    ggraph::theme_graph(foreground = 'grey45', base_family = 'sans', strip_text_size=50) 
 }
