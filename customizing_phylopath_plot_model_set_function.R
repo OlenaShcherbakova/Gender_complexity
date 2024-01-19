@@ -81,5 +81,6 @@ plot_model_set <- function(model_set, labels = NULL, algorithm = 'kk', manual_la
     ggraph::facet_edges(~model, nrow = nrow) +
     ggplot2::scale_x_continuous(expand = c(0.3, 0)) + #expand = c(0.2, 0)
     ggplot2::scale_y_continuous(expand = c(0.2, 0)) +
-    ggraph::theme_graph(foreground = 'grey45', base_family = 'sans', strip_text_size=50) 
+    ggraph::theme_graph(foreground = 'grey45', base_family = 'sans', 
+                        strip_text_size=25) #50
 }
