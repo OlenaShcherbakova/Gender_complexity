@@ -103,22 +103,35 @@ custom_names <- c("semantic\nrules", "agreement\npatterns", "phonological\nrules
 named_vector <- setNames(custom_names, names)
 
 #plot_model_set(m, manual_layout = positions)
+# model_sets <- plot_model_set(m, nrow=3, manual_layout = positions, 
+#                              edge_width = 3, curvature=0,
+#                              text_size = 8, #21
+#                              labels=named_vector, 
+#                              box_x=60, #130
+#                              box_y=60,
+#                              arrow = grid::arrow(type = 'closed', 
+#                                                  30, #30
+#                                                  grid::unit(12, 'points'))) #12
+
 model_sets <- plot_model_set(m, nrow=3, manual_layout = positions, 
                              edge_width = 3, curvature=0,
-                             text_size = 12, #21
+                             text_size = 6, #21
                              labels=named_vector, 
-                             box_x=110, #130
-                             box_y=90,
+                             box_x=45, #130
+                             box_y=30,
                              arrow = grid::arrow(type = 'closed', 
-                                                 30, grid::unit(12, 'points')))
+                                                 15, #30
+                                                 grid::unit(12, 'points'))) #12
 #model_sets
 
-ggsave(file="output/phylopath_model_sets_custom.svg", 
-       plot=model_sets, width=49, height=30, dpi=600)
-ggsave(file="output/phylopath_model_sets_custom.pdf", 
-       plot=model_sets, width=49, height=30)
-ggsave(file="output/phylopath_model_sets_custom.jpeg", 
-       plot=model_sets, width=49, height=30, dpi=600)
+# ggsave(file="output/phylopath_model_sets_custom.svg", 
+#        plot=model_sets, width=49, height=30, dpi=600)
+# ggsave(file="output/phylopath_model_sets_custom.pdf", 
+#        plot=model_sets, width=49, height=30)
+# ggsave(file="output/phylopath_model_sets_custom.jpeg", 
+#        plot=model_sets, width=35, height=20, dpi=300)
+ggsave(file="output/phylopath_model_sets_custom.png", 
+       plot=model_sets, width=25, height=15, dpi=300)
 
 #Plot 2: visualized best causal models with confidence intervals for each path
 source("phylopath_plots_ie.R")
@@ -128,4 +141,4 @@ source("phylopath_plots_w.R")#
 all <- (p_ie | p_b | p_w) / (coef_ie | coef_b | coef_w)
 ggsave(file="output/phylopath_all.svg", plot=all, width=17.5, height=10.5)
 ggsave(file="output/phylopath_all.pdf", plot=all, width=17.5, height=10.5)
-ggsave(file="output/phylopath_all.jpeg", plot=all, width=19, height=10.5, dpi=300)
+ggsave(file="output/phylopath_all.jpg", plot=all, width=19, height=10.5, dpi=300)
