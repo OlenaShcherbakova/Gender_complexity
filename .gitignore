@@ -6,6 +6,9 @@
 data/GB_wide_strict.tsv
 *.svg
 *.eps
+*.jpg
+*.png
+*.tiff
 *.docx
 *.pptx
 *.pdf
