@@ -200,7 +200,7 @@ ggsave(
   height = 10
 )
 ggsave(
-  file = "output/plot_maps_features.jpeg",
+  file = "output/plot_maps_features.jpg",
   plot = joined,
   width = 10,
   height = 10,

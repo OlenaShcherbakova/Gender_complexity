@@ -137,7 +137,7 @@ ggsave(
   height = 5
 )
 ggsave(
-  file = "output/plot_map_intro.jpeg",
+  file = "output/plot_map_intro.jpg",
   plot = m1,
   width = 10,
   height = 5,
