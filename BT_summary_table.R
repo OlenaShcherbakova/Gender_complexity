@@ -73,7 +73,7 @@ distributions$sigma2_indep <- paste (distributions$median_sigma2_indep, distribu
 
 distributions_subset <- distributions %>%
   dplyr::select(Traits, Phylogeny, BF, Lh_indep, Lh_dep, alpha1_dep, alpha1_indep, alpha2_dep, alpha2_indep, sigma1_dep, sigma1_indep, sigma2_dep, sigma2_indep, correlation) %>%
-  mutate(Phylogeny=recode(Phylogeny,
+  mutate(Phylogeny=dplyr::recode(Phylogeny,
                           "gray_et_al2009" = "Austronesian",
                           "bouckaert_et_al2012" = "Indo-European",
                           "kolipakam_et_al2018" = "Dravidian",
