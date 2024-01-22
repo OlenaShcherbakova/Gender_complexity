@@ -26,7 +26,7 @@ for (i in 1:length(txt)) {
 #providing a column corresponding to the file name (First trait used in the analysis, second trait used in the analysis, and Phylogeny)
 
 distributions <- distributions %>%
-  mutate(Traits = "X: Semantic rules Y: Agreement patterns",
+  dplyr::mutate(Traits = "X: Semantic rules Y: Agreement patterns",
          Phylogeny = vector)
 
 distributions <- distributions %>% dplyr::relocate(Traits, Phylogeny)
@@ -73,7 +73,7 @@ distributions$sigma2_indep <- paste (distributions$median_sigma2_indep, distribu
 
 distributions_subset <- distributions %>%
   dplyr::select(Traits, Phylogeny, BF, Lh_indep, Lh_dep, alpha1_dep, alpha1_indep, alpha2_dep, alpha2_indep, sigma1_dep, sigma1_indep, sigma2_dep, sigma2_indep, correlation) %>%
-  mutate(Phylogeny=recode(Phylogeny,
+  dplyr::mutate(Phylogeny=dplyr::recode(Phylogeny,
                           "gray_et_al2009_full" = "Austronesian",
                           "bouckaert_et_al2012_full" = "Indo-European",
                           "kolipakam_et_al2018_full" = "Dravidian",
@@ -88,7 +88,7 @@ distributions_subset_long <- distributions_subset %>%
   dplyr::select(Traits, Phylogeny, Model, `Marginal likelihood`, BF, alpha1, sigma1, alpha2, sigma2, correlation)
 
 BT_tab <- distributions_subset_long %>%
-  mutate(`X alpha (95% HPD)` = alpha1,
+  dplyr::mutate(`X alpha (95% HPD)` = alpha1,
          `Y alpha (95% HPD)`= alpha2,
          `X sigma (95% HPD)`= sigma1,
          `Y sigma (95% HPD)`= sigma2) %>%
@@ -99,7 +99,7 @@ BT_tab <- distributions_subset_long %>%
   fix_border_issues()
 
 latex_tab <- distributions_subset_long %>%
-  mutate(`X alpha (95% HPD)` = alpha1,
+  dplyr::mutate(`X alpha (95% HPD)` = alpha1,
          `Y alpha (95% HPD)`= alpha2,
          `X sigma (95% HPD)`= sigma1,
          `Y sigma (95% HPD)`= sigma2) %>%
