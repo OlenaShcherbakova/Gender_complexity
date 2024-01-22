@@ -61,7 +61,7 @@ gb.subset$agr_patterns <- as.numeric(as.character(gb.subset$agr_patterns))
 gb.subset %>%
   group_by(Family_ID) %>%
   summarise(n = n()) %>%
-  mutate(freq = n / sum(n)) %>%
+  dplyr::mutate(freq = n / sum(n)) %>%
   arrange(desc(n)) %>%
   filter(!Family_ID == "") %>%
   top_n(9, freq) -> table
@@ -74,8 +74,8 @@ gb.subset$family_status <- ifelse(gb.subset$Family_ID %in% biggest_families, gb.
 unique(gb.subset$family_status)
 
 gb.subset <- gb.subset %>% 
-  mutate(family = 
-           recode(family_status,
+  dplyr::mutate(family = 
+                  dplyr::recode(family_status,
                   "aust1307"  = "Austronesian",
                   "aust1305"  = "Austroasiatic",
                   "indo1319"  = "Indo-European",
