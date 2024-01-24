@@ -39,5 +39,6 @@ source("plot_maps.R")
 #source("plot_intro_map.R") this can only be run on the full GB sample
 source("plot_heatmaps.R")
 
-#robustness check: ensuring that the results are robust when different trees from posterior distribution
+#robustness check
+#ensuring that the results are robust with different trees from posterior distribution
 source("robustness_check_tree_choice.R")
