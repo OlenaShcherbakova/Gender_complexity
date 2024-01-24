@@ -1,6 +1,6 @@
 #BT files generator
-
 #interdependence between semantic classes and agreement patterns
+#code modified from the code originally written by Simon J. Greenhill
 
 library(here)
 source(here('library.R'))

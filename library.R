@@ -34,7 +34,7 @@ get_trait_vector <- function(tree, data, variable) {
   x
 }
 
-# Function to load trees from DPLACE-data repository
+# Function to load trees from DPLACE-data repository written by Simon J. Greenhill
 # can be used either with or without renameto = 'glottocode'
 load_trees <- function(dirname, type='posterior', mappingfile='taxa.csv', renameto=NA) {
   # check file type

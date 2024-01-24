@@ -1,4 +1,5 @@
 #plotting two maps visualizing semantic classes and agreement patterns scores
+#code modified from code originally written by Simon J. Greenhill
 
 source('library.R')
 
