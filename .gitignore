@@ -17,3 +17,6 @@ data/GB_wide_strict.tsv
 proposal_plots.R
 
 *grambank-analysed*
+
+*_mini.R
+*_mini_test.R
