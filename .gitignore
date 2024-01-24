@@ -4,6 +4,7 @@
 .Ruserdata
 *.Rproj
 data/GB_wide_strict.tsv
+*.ini
 *.svg
 *.eps
 *.jpg
