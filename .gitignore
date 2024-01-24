@@ -4,7 +4,6 @@
 .Ruserdata
 *.Rproj
 data/GB_wide_strict.tsv
-*.ini
 *.svg
 *.eps
 *.jpg
@@ -20,3 +19,5 @@ proposal_plots.R
 
 *_mini.R
 *_mini_test.R
+
+desktop.ini
